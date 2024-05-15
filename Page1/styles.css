@@ -1,0 +1,96 @@
+body {
+    background-color: rgb(144, 238, 255);
+    overflow: hidden;
+    margin: 0; /* Reset margin */
+}
+
+@keyframes snowfall {
+    0% {
+        top: -10vh; /* Corrected syntax */
+    }
+    100% {
+        transform: translateY(110vh); 
+    }
+}
+
+.snowflake {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    animation: snowfall linear infinite; 
+    animation-duration: 20s; 
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+}
+
+.container {
+    position: relative;
+    width: 100%; /* Adjusted for responsiveness */
+    height: 100%; /* Adjusted for responsiveness */
+}
+
+.map {
+    display: none; /* Initially hide the map image */
+    position: absolute; /* Changed from fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.sheepgif {
+    position: absolute; /* Changed from fixed */
+    top: 80%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.message {
+    position: absolute; /* Changed from fixed */
+    top: 90%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; 
+}
+
+.message::after {
+    content: '';
+    position: absolute; /* Changed from fixed */
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent #ccc transparent;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+}

@@ -1,0 +1,79 @@
+body {
+    background-color: black;
+    overflow: hidden;
+    margin-top: -10px;
+}
+
+@keyframes snowfall {
+    0% {
+        top: (-10vh); 
+    }
+    100% {
+        transform: translateY(110vh); 
+    }
+}
+
+.snowflake {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    animation: snowfall linear infinite; 
+    animation-duration: 20s; 
+}
+
+.anglophoria {
+    width: 900px;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensures the image is behind the snowflakes */
+}
+
+
+.foreground-image {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: -150px;
+    z-index: -1; /* Ensures the image is behind the snowflakes */
+}
+
+
+.sheepgif {
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.message {
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; 
+}
+
+.message::after {
+    content: '';
+    position: fixed;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent #ccc transparent;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+}
