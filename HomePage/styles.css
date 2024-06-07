@@ -26,10 +26,9 @@ body {
     width: 900px;
     height: auto;
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 20%;
+    left: 80%;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Ensures the image is behind the snowflakes */
 }
 
 
@@ -76,4 +75,53 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 0;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: space-around;
+    margin: 30px;
+    font-family: "Poetsen One", sans-serif;
+    color: rgb(255, 113, 236);
+}
+
+.points {
+    margin-right: 200px;
+}
+
+
+.challenges {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aquamarine;
+    display: flex;
+    flex-direction: column
+
+}
+
+.challenges button{
+    margin: 30px;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: "Poetsen One", sans-serif;
+}
+
+.b1 {
+    background-color: aqua;
+    color: black;
+}
+
+.b2 {
+    background-color: rgb(190, 255, 39);
+    color: black;
+}
+
+.b3 {
+    background-color: rgb(0, 162, 255);
+    color: black;
 }

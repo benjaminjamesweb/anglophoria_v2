@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snowfall Animation</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="snowflakes"></div>
@@ -36,6 +39,22 @@
         <button onclick="enterAnglophoria()">Click to enter Anglophoria</button>
         <button onclick="restart()">Restart</button>
     </div>
+
+    <div class="stats">
+
+        <h1 class="points">Your points: 0 </h1>
+
+        <h1 class="health">Your health: 100 </h1>
+
+    </div>
+
+    <div class="challenges">
+        <button class="b1">Challenge #1: 100 points (hard)</button>
+        <button class="b2">Challenge #2: 50 points (easy)</button>
+        <button class="b3">Challenge #3: mystery (master)</button>
+
+    </div>
+
 
     <img src="sheep.gif" class="sheepgif" onclick="showNextMessage()">
     <script src="script.js"></script>

@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(203, 255, 120);
+    overflow: hidden;
+    margin-top: -10px;
+    font-family: "Poetsen One", sans-serif;
+    color: white;
+    text-shadow: 0 0 10px rgb(67, 186, 255);
+}
+
+@keyframes snowfall {
+    0% {
+        top: (-10vh); 
+    }
+    100% {
+        transform: translateY(110vh); 
+    }
+}
+
+.snowflake {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    animation: snowfall linear infinite; 
+    animation-duration: 20s; 
+}
+
+.anglophoria {
+    width: 900px;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input {
+    position: fixed;
+    top: 68%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 23px;
+}
+
+.input input{
+    width:400px;
+    height: 30px;
+    border-color: white;
+}
+
+.login {
+    font-size: 60px;
+    margin-bottom: 30;
+}
+.fields {
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.no-account {
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Adjust this value if you need specific horizontal positioning */
+    width: 100%; /* Optional: Ensures it spans the full width of the screen */
+    text-align: center; /* Optional: Centers the text horizontally */
+}
+
+.create-account {
+    color: rgb(106, 134, 255);
+}
+
+.login-button {
+    margin: 10px;
+    padding: 5px;
+    background-color: white;
+    font-size: 15px;
+    border-radius: 3px;
+    border-color: white;
+}
