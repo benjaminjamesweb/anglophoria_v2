@@ -1,5 +1,6 @@
+/* General Styles */
 body {
-    background-color: rgb(255, 169, 241);
+    background-color: rgb(0, 0, 0);
     overflow: hidden;
     margin-top: -10px;
     font-family: "Poetsen One", sans-serif;
@@ -7,9 +8,76 @@ body {
     text-shadow: 0 0 10px rgb(67, 186, 255);
 }
 
+/* Navigation Bars */
+nav {
+    background-color: #333;
+    height: 60px;
+    font-size: 30px;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav li {
+    padding: 14px;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+nav span.material-icons {
+    margin-right: 10px;
+    font-size: 40px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.icicles{
+    position:fixed;
+    top: 60;
+    overflow: hidden;
+}
+
+.icicles img{
+    height: 200px;;
+    margin: -5px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Snowflake Animation */
 @keyframes snowfall {
     0% {
-        top: (-10vh); 
+        top: -10vh; 
     }
     100% {
         transform: translateY(110vh); 
@@ -21,67 +89,131 @@ body {
     width: 5px;
     height: 5px;
     background-color: white;
-    animation: snowfall linear infinite; 
-    animation-duration: 20s; 
+    animation: snowfall 20s linear infinite;
 }
 
+/* Anglophoria Image */
 .anglophoria {
     width: 900px;
     height: auto;
     position: fixed;
-    top: 30%;
-    left: 50%;
+    top: 45%;
+    left: 52%;
     transform: translate(-50%, -50%);
 }
 
+/* Input Section */
 .input {
     position: fixed;
-    top: 57%;
-    left: 50%;
-    transform: translate(-60%, -50%);
+    top: 60%;
+    left: 74%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     font-size: 23px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.input input{
-    width:400px;
+.input input {
+    width: 300px;
     height: 30px;
-    border-color: white;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.trees {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw; /* Adjust the width to your needs */
+    height: 400px; /* Adjust the height to your needs */
+    transform: translate(-50%, -50%);
+    border: 1px solid transparent; /* Optional: for visualizing the container during design */
 }
 
-.login {
-    font-size: 60px;
-    margin-bottom: 30;
+.trees img {
+    position: absolute;
+    width: 200px; /* Adjust the size of the trees */
+    height: auto; /* Maintain aspect ratio */
 }
+
+.tree-1 { top: 0%; left: 0%; }
+.tree-2 { top: 7%; left: 4%; }
+.tree-3 { top: 60%; left: 94%; }
+.tree-4 { top: 87%; left: 92%; }
+.tree-5 { top: 40%; left: 10%; }
+.tree-6 { top: 75%; left: 30%; }
+.tree-7 { top: 70%; left: 0%; }
+.sheep { top: 70%; left: 20%; }
+
+.SnowBackground {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+
+}
+.login {
+    font-size: 40px;
+    margin-bottom: 70px;
+}
+
 .fields {
-    width:400px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
 }
 
-.no-account {
-    position: absolute;
-    bottom: 0;
-    left: 0; /* Adjust this value if you need specific horizontal positioning */
-    width: 100%; /* Optional: Ensures it spans the full width of the screen */
-    text-align: center; /* Optional: Centers the text horizontally */
+.sign-up-prompt {
+    margin-top: 20px;
+    text-align: center;
 }
 
+.signup-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: #ddd;
+}
+
+/* No Account Section */
+.no-account {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Create Account Link */
 .create-account {
     color: rgb(106, 134, 255);
 }
 
+/* Login Button */
 .login-button {
     margin: 10px;
-    padding: 5px;
-    background-color: white;
+    padding: 10px;
+    background-color: green;
+    color: white;
     font-size: 15px;
-    border-radius: 3px;
-    border-color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: darkgreen;
 }

@@ -5,32 +5,87 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <!-- Header Navigation Bar -->
+    <header>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#demo"><span class="material-icons">play_circle</span> Watch a demo</a></li>
+                <li><a href="#reviews"><span class="material-icons">star</span> Reviews</a></li>
+                <li><a href="#info"><span class="material-icons">info</span> Who is it for?</a></li>
+                <li><a href="#login"><span class="material-icons">login</span> Log in</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="snowflakes"></div>
 
-    <div>
+    <div id="message1" class="message">Welcome baaaaack!</div>
+
+    <div class="icicles">
+    <img src="icicle.png" alt="">
+    <img src="icicle.png" alt="">
+    <img src="icicle.png" alt="">
+    <img src="icicle.png" alt="">
+    <img src="icicle.png" alt="">
+    <img src="icicle.png" alt="">
+    <img src="icicle.png" alt="">
+    <img src="icicle.png" alt="">
+    <img src="icicle.png" alt="">
+</div>
+
+
+    <div class="logo-container">
         <h1>
-            <img src="New Piskel-1.png (1).png" alt="" class="anglophoria">
+            <img src="New Piskel-1.png (1).png" alt="Anglophoria Logo" class="anglophoria">
         </h1>
     </div>
+    <!-- <img src="SnowBackground.png" alt="" class="SnowBackground"> -->
+    <div class="trees">
+        <img src="tree.png" alt="" class="tree-1">
+        <img src="tree.png" alt="" class="tree-2">
+        <img src="tree.png" alt="" class="tree-3">
+        <img src="tree.png" alt="" class="tree-4">
+        <img src="tree.png" alt="" class="tree-5">
+        <img src="tree.png" alt="" class="tree-6">
+        <img src="tree.png" alt="" class="tree-7">
+        <img src="sheep.gif" alt="" class="sheep" onclick="showNextMessage()">
+    </div>
+
+
 
     <section class="input">
-
-
         <h1 class="login">Log in</h1>
         <div class="fields">
-        <label for="username">Username</label>
-        <input type="text" class="username">
-        <label for="password">Password</label>
-        <input type="text" class="password">
-    </div>
-    <button class="login-button" onclick="window.location.href='../HomePage/index.html'">Log in</button>
+            <input type="text" class="username" placeholder="Your username / email address">
+            <input type="password" class="password" placeholder="Password">
+            
+        </div>
+        <button class="login-button" onclick="window.location.href='../HomePage/index.html'">Log in</button>
+        
+    </section>
 
-</section>
-    <h1 class="no-account">Don't have an Anglophoria account? <a href="../Signup/index.html" class="create-account">Create one for free</a></h1>
+    <div class="sign-up-prompt">
+        <span>Don't have an account?</span>
+        <button class="signup-button" onclick="window.location.href='../Signup/index.html'">Sign up</button>
+    </div>
+
+    <!-- Lower Navigation Bar -->
+    <footer>
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#info"><span class="material-icons">info</span> Info</a></li>
+                <li><a href="#contact"><span class="material-icons">email</span> Contact us</a></li>
+                <li><a href="#faq"><span class="material-icons">help</span> FAQ</a></li>
+                <li><a href="#about"><span class="material-icons">info</span> About</a></li>
+            </ul>
+        </nav>
+    </footer>
+    </footer>
+
 
     <script src="script.js"></script>
 </body>
