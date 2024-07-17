@@ -56,11 +56,16 @@ header {
     z-index: 1000;
 }
 
+
 .icicles{
     position:fixed;
     top: 60;
+    display: flex;
     overflow: hidden;
+    flex-wrap: nowrap;
+    width: 100vw;
 }
+
 
 .icicles img{
     height: 200px;;
@@ -100,6 +105,7 @@ footer {
     top: 45%;
     left: 28%;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 /* Input Section */
@@ -160,12 +166,18 @@ footer {
 }
 
 .tree-1 { top: 0%; left: 0%; }
-.tree-2 { top: 7%; left: 4%; }
-.tree-3 { top: 60%; left: 94%; }
-.tree-4 { top: 87%; left: 92%; }
-.tree-5 { top: 40%; left: 10%; }
-.tree-6 { top: 75%; left: 30%; }
-.tree-7 { top: 70%; left: 0%; }
+.tree-2 { top: 19%; left: 4%; }
+.tree-3 { top: 0%; left: 20%;}
+.tree-4 { top: 1%; left: 29%; }
+.tree-5 { top: 6%; left: 24%; }
+.tree-6 { top: -4%; left: 34%; z-index: -1; }
+.tree-7 { top: 100%; left: -4%;} 
+
+/* .tree-3 { top: 60%; left: 91%; }
+.tree-4 { top: 87%; left: 85%; }
+.tree-5 { top: 70%; left: 0%; }
+.tree-6 { top: 95%; left: 30%; }
+.tree-7 { top: 100%; left: 3%; } */
 
 .sheep { 
     top: 70%; left: 20%; 

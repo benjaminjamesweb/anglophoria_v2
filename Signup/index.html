@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <div class="snowflakes"></div>
     <!-- Header Navigation Bar -->
     <header>
         <nav class="header-nav">
@@ -21,9 +22,10 @@
             </ul>
         </nav>
     </header>
-    <div class="snowflakes"></div>
+
 
     <div class="icicles">
+    <img src="icicle.png" alt="">
     <img src="icicle.png" alt="">
     <img src="icicle.png" alt="">
     <img src="icicle.png" alt="">
@@ -41,25 +43,36 @@
         </h1>
     </div>
 
+    <div class="trees">
+        <img src="tree.png" alt="" class="tree-1">
+        <img src="tree.png" alt="" class="tree-2">
+        <img src="tree.png" alt="" class="tree-3">
+        <img src="tree.png" alt="" class="tree-4">
+        <img src="tree.png" alt="" class="tree-5">
+        <img src="tree.png" alt="" class="tree-6">
+        <img src="tree.png" alt="" class="tree-7">
+        <img src="sheep3.gif" alt="" class="sheep" onclick="showNextMessage()">
+    </div>
+
     <section class="input">
 
 
         <h1 class="login">Sign up</h1>
-        <p>It's free!</p>
         <div class="fields">
-            <label for="password">Email</label>
-            <input type="text" class="email">
-        <label for="username">Username</label>
-        <input type="text" class="username">
-        <label for="password">Password</label>
-        <input type="text" class="password">
-        <label for="password">VerifyPassword</label>
-        <input type="text" class="verify-password">
-    </div>
+            <input type="text" class="email" placeholder="Email">
+            <input type="text" class="username" placeholder="Username">
+            <input type="password" class="password" placeholder="Password">
+            <input type="password" class="verify-password" placeholder="Verify Password">
+        </div>
+        
     <button class="login-button" onclick="window.location.href='../HomePage/index.html'">Sign up</button>
 
 </section>
-    <h1 class="no-account">Already have an Anglophoria account? <a href="../LandingPage/index.html" class="create-account">Log in</a></h1>
+<div class="no-account">
+    <span>Already have an account?</span>
+        <button onclick="location.href='../LandingPage/index.html'" class="login-button">Log in</button>
+</div>
+
     <footer>
         <nav class="footer-nav">
             <ul>
