@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get set up</title>
+    <link rel="stylesheet" href="../Resources/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../Resources/snowflake.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="snowflake-container">
+        <div class="snowflake"></div>
+    </div>
+
+    <header>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#demo"><span class="material-icons">play_circle</span> Watch a demo</a></li>
+                <li><a href="#reviews"><span class="material-icons">star</span> Reviews</a></li>
+                <li><a href="#info"><span class="material-icons">info</span> Who is it for?</a></li>
+                <li><a href="#login"><span class="material-icons">login</span> Log in</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="icicles">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+    </div>
+
+    <div>
+        <h1>
+            <img src="../Images/anglophoria.png" alt="" class="anglophoria">
+        </h1>
+    </div>
+
+    <div class="trees">
+        <img src="../Images/tree.png" alt="" class="tree-1">
+        <img src="../Images/tree.png" alt="" class="tree-2">
+        <img src="../Images/tree.png"  alt="" class="tree-3">
+        <img src="../Images/tree.png"  alt="" class="tree-4">
+        <img src="../Images/tree.png"  alt="" class="tree-5">
+        <img src="../Images/tree.png"  alt="" class="tree-6">
+        <img src="../Images/tree.png"  alt="" class="tree-7">
+        <img src="../Images/sheep.gif" alt="" class="sheep" onclick="showNextMessage()">
+    </div>
+
+    <section class="input">
+
+        <section class="slide1">
+            <h1>What is your English level?
+                <span id="toggle-help" class="material-icons" style="cursor: pointer;">help</span> <!-- Material icon question mark -->
+            </h1>
+
+        <div class="levels">
+            <p id="beginner">Beginner</p>
+            <p id="intermediate">Intermediate</p>
+            <p id="advanced">Advanced</p>
+        </div>
+        <h1 id="help-message" style="display: none;"> <!-- Initially hidden -->
+            Don't know your English level? Take a 3-minute test
+        </h1>
+</section>
+
+<section class="slide2">
+    <h1>Set your Translation Language</h1>
+
+    <h2 id="detected-language">Detected language: </h2>
+
+
+    <h1>Not the right language? Select another one:</h1>
+    <select id="language-dropdown">
+        <option value="english">English</option>
+        <option value="spanish">Spanish</option>
+        <option value="french">French</option>
+        <option value="german">German</option>
+        <option value="chinese">Chinese</option>
+        <option value="japanese">Japanese</option>
+        <option value="korean">Korean</option>
+        <option value="italian">Italian</option>
+        <option value="portuguese">Portuguese</option>
+        <option value="russian">Russian</option>
+    </select>
+</section>
+
+<section class="slide3">
+    <h1>Which version do you want?</h1>
+
+    <div class="versions">
+        <div id="free-version">
+            <h1>Free version</h1>
+            <h2 class="price">$0.00/month</h2>
+            <p>Get access to:</p>
+            <ul>
+                <li>Less content</li>
+                <li>No need to pay</li>
+            </ul>
+        </div>
+        <div id="premium-version">        
+            <h1>Premium version</h1>
+            <h2 class="price">$4.99/month</h2>
+            <p>Get access to:</p>
+            <ul>
+                <li>500% more content</li>
+                <li>No ads</li>
+            </ul>
+        </div>
+    </div>
+    <h1 class="no-account">Not sure yet? <a href="../Signup/index.html" class="create-account">Read the full features list</a></h1>
+</section>
+
+
+<section class="slide4">
+    <h1>Settings</h1>
+    <form id="settings-form">
+        <p>Do you accept the terms and agreements?
+            <input type="checkbox" id="terms-checkbox">
+        </p>
+        <p>Do you accept all cookies?
+            <input type="checkbox" id="cookies-checkbox">
+        </p>
+    </form>
+</section>
+
+<div id="selected-message"></div>
+<div id="selected-message2"></div>
+<button id="next" class="next" disabled>Next</button>
+<button id="finish" class="finish" disabled style="display: none;">Finish</button>
+</section>
+
+<footer>
+    <nav class="footer-nav">
+        <ul>
+            <li><a href="#info"><span class="material-icons">info</span> Info</a></li>
+            <li><a href="#contact"><span class="material-icons">email</span> Contact us</a></li>
+            <li><a href="#faq"><span class="material-icons">help</span> FAQ</a></li>
+            <li><a href="#about"><span class="material-icons">info</span> About</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<script src="../Resources/snowflakes.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

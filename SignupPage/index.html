@@ -3,15 +3,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../Resources/styles.css">
+    <link rel="stylesheet" href="../Resources/snowflake.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div class="snowflakes"></div>
-    <!-- Header Navigation Bar -->
+    <div class="snowflake-container">
+        <div class="snowflake"></div>
+    </div>
+
     <header>
         <nav class="header-nav">
             <ul>
@@ -25,33 +28,37 @@
 
 
     <div class="icicles">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-    <img src="icicle.png" alt="">
-</div>
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+    </div>
 
     <div>
         <h1>
-            <img src="New Piskel-1.png (1).png" alt="" class="anglophoria">
+            <img src="../Images/anglophoria.png" alt="" class="anglophoria">
         </h1>
     </div>
 
     <div class="trees">
-        <img src="tree.png" alt="" class="tree-1">
-        <img src="tree.png" alt="" class="tree-2">
-        <img src="tree.png" alt="" class="tree-3">
-        <img src="tree.png" alt="" class="tree-4">
-        <img src="tree.png" alt="" class="tree-5">
-        <img src="tree.png" alt="" class="tree-6">
-        <img src="tree.png" alt="" class="tree-7">
-        <img src="sheep3.gif" alt="" class="sheep" onclick="showNextMessage()">
+        <img src="../Images/tree.png" alt="" class="tree-1">
+        <img src="../Images/tree.png" alt="" class="tree-2">
+        <img src="../Images/tree.png"  alt="" class="tree-3">
+        <img src="../Images/tree.png"  alt="" class="tree-4">
+        <img src="../Images/tree.png"  alt="" class="tree-5">
+        <img src="../Images/tree.png"  alt="" class="tree-6">
+        <img src="../Images/tree.png"  alt="" class="tree-7">
+        <img src="../Images/sheep.gif" alt="" class="sheep" onclick="showNextMessage()">
     </div>
 
     <section class="input">
@@ -65,12 +72,12 @@
             <input type="password" class="verify-password" placeholder="Verify Password">
         </div>
         
-    <button class="login-button" onclick="window.location.href='../HomePage/index.html'">Sign up</button>
+    <button class="login-button" onclick="window.location.href='../MyAccount/index.html'">Sign up</button>
 
 </section>
 <div class="no-account">
     <span>Already have an account?</span>
-        <button onclick="location.href='../LandingPage/index.html'" class="login-button">Log in</button>
+        <button onclick="location.href='../LoginPage/index.html'" class="login-button">Log in</button>
 </div>
 
     <footer>
@@ -83,6 +90,8 @@
             </ul>
         </nav>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="../Resources/snowflakes.js"></script>
+    <script src="../Resources/messages.js"></script>
 </body>
 </html>

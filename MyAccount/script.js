@@ -1,22 +1,3 @@
-const numSnowflakes = 100;
-
-for (let i = 0; i < numSnowflakes; i++) {
-    createSnowflake();
-}
-
-function createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.classList.add('snowflake');
-    snowflake.style.left = `${Math.random() * 100}%`;
-    snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`;
-    snowflake.style.animationDelay = `${Math.random() * 3}s`;
-    document.querySelector('.snowflakes').appendChild(snowflake);
-}
-// Define the global variables
-let user_chosen_level = null;
-let user_chosen_version = null;
-let user_chosen_language = null;
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const languageMap = {
@@ -165,3 +146,13 @@ function checkFinishConditions() {
         finishButton.classList.remove('enabled');
     }
 }
+
+
+document.getElementById('toggle-help').addEventListener('click', function() {
+    var helpMessage = document.getElementById('help-message');
+    if (helpMessage.style.display === 'none' || helpMessage.style.display === '') {
+        helpMessage.style.display = 'block';
+    } else {
+        helpMessage.style.display = 'none';
+    }
+});
