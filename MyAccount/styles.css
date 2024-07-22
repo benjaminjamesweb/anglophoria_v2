@@ -1,23 +1,110 @@
-.slide1, .slide2, .slide3, .slide4 {
+.slide0, .slide1, .slide2, .slide3, .slide4 {
     background-color: rgb(15, 15, 15);
     padding: 20px;
-    min-height: 250px;
+    min-height: 200px;
     min-width: 400px;
     border-radius: 10px;
 }
 
-#toggle-help {
-    margin-top: 25px;
+.slide0 {
+    padding: 20px;
+    min-height: 200px;
+    min-width: 400px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);;
+}
+.slide0 form{
+    background-color: rgb(59, 59, 59);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 
-#help-message {
-    font-size: 15px;
+.country{
+    width: 100px;
+    height:25px;
+    border-radius: 3px;
 }
+
+form .nickname{
+    width: 150px;
+}
+
+form .bday {
+    width: 125px; /* Adjust width to your preference */
+    padding: 5px;
+    margin-top: 10px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+form label{
+    margin-top: 20px;
+}
+
+#toggle-help-1 {
+    height: 4px;
+}
+
+#help-message-1 .cefr-levels{
+    font-size: 15px;
+    background-color: rgb(51, 51, 51);
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+#help-message-2{
+    font-size: 15px;
+    background-color: rgb(36, 36, 36);
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+#help-message-0{
+    font-size: 15px;
+    background-color: rgb(36, 36, 36);
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+#help-message-0 .title{
+    font-size: 25px;
+}
+#help-message-3{
+    font-size: 15px;
+    background-color: rgb(36, 36, 36);
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.detected-language-container{
+    font-size: 18px;
+    background-color: rgb(51, 51, 51);
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.detected-language-container #detected-language{
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+
+
+#help-message-1 .title{
+    font-size: 19px;
+    margin-top: 50px;
+}
+
 h1 {
     font-size: 27px;
 }
 
-.slide2, .slide3, .slide4 {
+.slide1, .slide2, .slide3, .slide4 {
     display: none;
 }
 
@@ -40,25 +127,60 @@ h1 {
     margin: 0px;
 }
 
-.versions div {
-    border: 3px solid black;
-    padding: 0px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    flex: 1;
-    margin: 10px;
-    min-width: 400px;
+
+.details {
+    padding: 7px;
+    background-color: rgb(56, 56, 56);
+    border-radius: 8px;
+    margin: 5px;
+    width: 210px;
+    height: 230px;
+}
+
+.details .price {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.details .bullet-points {
+    margin-left: 20px; /* Adjust as needed */
+    text-align: left;
+}
+
+.details .bullet-points p {
+    position: relative; /* Required for positioning the ::before pseudo-element */
+    padding-left: 15px; /* Space between bullet point and text */
+}
+
+.details .bullet-points p::before {
+    content: "\2022"; /* Bullet point character (•) */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff; /* Bullet point color */
 }
 
 
-.levels p.selected, .versions div.selected {
+.versions .title{
+font-size: 30px;
+margin-bottom: 0px;
+}
+
+.versions .price{
+    font-size: 30px;
+    margin-bottom: 0px;
+    }
+
+.levels p.selected, .details.selected {
     background-color: rgb(228, 96, 255) !important;
     animation: selectionAnimation 0.5s forwards;
 }
 
 
-.levels p:hover{
-    background-color: rgb(86, 255, 43);
+.levels p:hover, .details:hover{
+    background-color: rgb(155, 155, 155);
 }
 
 
@@ -99,21 +221,6 @@ h1 {
     border-radius: 3px;
     border-color: white;
 }
-#free-version{
-    background-color: aqua;
-}
-
-#free-version:hover{
-    background-color: rgb(131, 255, 59);
-}
-
-#premium-version{
-    background-color: rgb(255, 159, 239);
-}
-
-#premium-version:hover{
-    background-color: rgb(131, 255, 59);
-}
 
 .versions ul {
     list-style-type: disc;
@@ -121,9 +228,12 @@ h1 {
     padding-left: 75px;
 }
 
+
+
 #language-dropdown {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 16px;
+    margin-top: 0px;
+    padding: 5px;
+    font-size: 14px;
     border-radius: 5px;
+    margin-bottom: 25px;
 }

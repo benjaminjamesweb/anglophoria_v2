@@ -64,9 +64,40 @@
 
     <section class="input">
 
+        <section class="slide0">
+            <h2>Personal Info
+                <span id="toggle-help-0" class="material-icons" style="cursor: pointer;">help</span> <!-- Material icon question mark -->
+            </h2>
+            <form>
+                <label>Enter your nickname or preferred name:</label>
+                <input class="nickname" type="text" name="nickname" placeholder="Your nickname" required>
+                <label>Enter your birthday: </label>
+                <input class="bday" type="date" name="dob" required>
+                <label>Select your country:</label>
+                <select class="country" name="country" required>
+                    <option value="" disabled selected>-- Select --</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">UK</option>
+                    <option value="France">France</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Mexico">Mexico</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </form>
+            <div id="help-message-0" style="display: none;"> <!-- Initially hidden -->
+                <p class="title">Why do we need this info?</p>
+                <div class="cefr-levels">
+                <p>It helps us personalize your experience.</p>
+            </div>
+
+        </section>
+
+
         <section class="slide1">
             <h1>Select your estimated English level
-              
+                <span id="toggle-help-1" class="material-icons" style="cursor: pointer;">help</span> <!-- Material icon question mark -->
             </h1>
 
         <div class="levels">
@@ -77,23 +108,33 @@
             <p id="c1">C1</p>
             <p id="c2">C2</p>
         </div>
-        <span id="toggle-help" class="material-icons" style="cursor: pointer;">help</span> <!-- Material icon question mark -->
-        <p id="help-message" style="display: none;"> <!-- Initially hidden -->
-            What do we mean by "estimated English level"?
-        </p>
-        <p>These six levels are defined by CEFR to loosely describe the main proficiency levels of any language.</p>
-        <p>Here's an outline: </p>
-        <p>A1: Can understand basic words and phrases.</p>
-        <p>A2: </p>
+        
+        <div id="help-message-1" style="display: none;"> <!-- Initially hidden -->
+        <p class="title">CEFR to defines proficiency levels as follows:</p>
+        <div class="cefr-levels">
+        <p>A1 (Beginner): Can understand basic words and phrases for everyday needs.</p>
+        <p>A2 (Elementary): Can communicate simple tasks and routine information.</p>
+        <p>B1 (Intermediate): Can handle familiar topics and express personal opinions.</p>
+        <p>B2 (Upper Intermediate): Can understand main ideas and interact fluently on a variety of topics.</p>
+        <p>C1 (Advanced): Can use language effectively and flexibily for social, academic, and professional purposes.</p>
+        <p>C2 (Proficient): Can understand virtually everything heard or read and express ideas precisely.</p>
+    </div>
+    </div>
 </section>
 
 <section class="slide2">
-    <h1>Set your Translation Language</h1>
+    
+    
+    <h1>Set Translation Language
 
-    <h2 id="detected-language">Detected language: </h2>
+        <span id="toggle-help-2" class="material-icons" style="cursor: pointer;">help</span> <!-- Material icon question mark -->
+    </h1>
 
+    <div class="detected-language-container">
+    <p id="detected-language">Detected language: </p>
 
-    <h1>Not the right language? Select another one:</h1>
+<p>If correct, press "Next"</p>
+    <p>Otherwise, select another one:</p>
     <select id="language-dropdown">
         <option value="english">English</option>
         <option value="spanish">Spanish</option>
@@ -106,32 +147,49 @@
         <option value="portuguese">Portuguese</option>
         <option value="russian">Russian</option>
     </select>
+</div>
+
+
+    <div id="help-message-2" style="display: none;"> <!-- Initially hidden -->
+        <p class="title">This translation language will be used for translations.</p>
+        <div class="cefr-levels">
+        <p>You can change it any time in "My Account"</p>
+    </div>
+    </div>
 </section>
 
 <section class="slide3">
-    <h1>Which version do you want?</h1>
+    <h1>Select an Account Type
+        <span id="toggle-help-3" class="material-icons" style="cursor: pointer;">help</span> <!-- Material icon question mark -->
+    </h1>
 
     <div class="versions">
-        <div id="free-version">
-            <h1>Free version</h1>
-            <h2 class="price">$0.00/month</h2>
-            <p>Get access to:</p>
-            <ul>
-                <li>Less content</li>
-                <li>No need to pay</li>
-            </ul>
+        <div>
+            <p class="title">Free</p>
+            <div class="details" id="free-version">
+                <p class="price">$0.00/month</p>
+                <div class="bullet-points">
+                    <p>No credit card required</p>
+                    <p>100 hours of content</p>
+                    <p>Frequent ads</p>
+                </div>
+            </div>
+            </div>
+        <div>        
+            <p class="title">Premium</p>
+            <div class="details" id="premium-version">
+            <p class="price">$4.99/month</p>
+            <div class="bullet-points">
+                <p>First month free!</p>
+                <p>600 hours of content</p>
+                <p>No ads</p>
+            </div>
         </div>
-        <div id="premium-version">        
-            <h1>Premium version</h1>
-            <h2 class="price">$4.99/month</h2>
-            <p>Get access to:</p>
-            <ul>
-                <li>500% more content</li>
-                <li>No ads</li>
-            </ul>
         </div>
     </div>
-    <h1 class="no-account">Not sure yet? <a href="../Signup/index.html" class="create-account">Read the full features list</a></h1>
+    <div id="help-message-3" style="display: none;"> <!-- Initially hidden -->
+        <p>Don't worry - you can change your account type at any time later on!</p>
+    </div>
 </section>
 
 
