@@ -54,16 +54,28 @@ function handleLevelClick(level, element) {
 }
 
 // Add event listeners to the level buttons
-document.getElementById('beginner').addEventListener('click', function() {
-    handleLevelClick('Beginner', this);
+document.getElementById('a1').addEventListener('click', function() {
+    handleLevelClick('A1', this);
 });
 
-document.getElementById('intermediate').addEventListener('click', function() {
-    handleLevelClick('Intermediate', this);
+document.getElementById('a2').addEventListener('click', function() {
+    handleLevelClick('A2', this);
 });
 
-document.getElementById('advanced').addEventListener('click', function() {
-    handleLevelClick('Advanced', this);
+document.getElementById('b1').addEventListener('click', function() {
+    handleLevelClick('B1', this);
+});
+
+document.getElementById('b2').addEventListener('click', function() {
+    handleLevelClick('B2', this);
+});
+
+document.getElementById('c1').addEventListener('click', function() {
+    handleLevelClick('C1', this);
+});
+
+document.getElementById('c2').addEventListener('click', function() {
+    handleLevelClick('C2', this);
 });
 
 

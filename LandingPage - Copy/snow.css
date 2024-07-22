@@ -1,0 +1,18 @@
+
+@keyframes snowfall {
+    0% {
+        top: -10vh; 
+    }
+    100% {
+        transform: translateY(110vh); 
+    }
+}
+
+.snowflake {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    animation: snowfall linear infinite; 
+    animation-duration: 20s; 
+}

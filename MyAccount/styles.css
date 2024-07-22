@@ -1,6 +1,20 @@
 .slide1, .slide2, .slide3, .slide4 {
-    border: 3px solid black;
+    background-color: rgb(15, 15, 15);
     padding: 20px;
+    min-height: 250px;
+    min-width: 400px;
+    border-radius: 10px;
+}
+
+#toggle-help {
+    margin-top: 25px;
+}
+
+#help-message {
+    font-size: 15px;
+}
+h1 {
+    font-size: 27px;
 }
 
 .slide2, .slide3, .slide4 {
@@ -9,18 +23,21 @@
 
 .input .levels, .versions {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+}
+
+.levels {
+    gap:0px;
+    margin-top: 50px;
 }
 
 .levels p {
     border: 3px solid black;
-    padding: 50px;
+    padding: 8px;
     background-color: rgb(236, 236, 236);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     flex: 1;
-    margin: 10px;
+    margin: 0px;
 }
 
 .versions div {
@@ -40,7 +57,7 @@
 }
 
 
-#beginner:hover, #intermediate:hover, #advanced:hover{
+.levels p:hover{
     background-color: rgb(86, 255, 43);
 }
 
@@ -58,7 +75,7 @@
 .next, .finish {
     border: none;
     border-radius: 4px;
-    margin-top: 80px;
+    margin-top: 0px;
     padding: 10px 20px;
     cursor: not-allowed;
     transition: background-color 0.3s, transform 0.3s;
