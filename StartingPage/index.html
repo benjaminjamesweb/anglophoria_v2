@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snowfall Animation</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../Resources/snowflake.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="snowflakes"></div>
 
-    <img src="New Piskel-1.png (1).png" alt="" class="anglophoria">
-    <img src="New Piskel-1.png (3).png" alt="Your Image" class="foreground-image">
+    <img src="../Images/anglophoria.png" alt="" class="anglophoria">
     <div id="message1" class="message">Hello, traveller! Welcome... to ANGLOPHORIA.</div>
     <div id="message2" class="message">Here, you will take a journey that will surely improve your English.</div>
     <div id="message3" class="message">
@@ -40,23 +41,10 @@
         <button onclick="restart()">Restart</button>
     </div>
 
-    <div class="stats">
-
-        <h1 class="points">Your points: 0 </h1>
-
-        <h1 class="health">Your health: 100 </h1>
-
-    </div>
-
-    <div class="challenges">
-        <button class="b1">Challenge #1: 100 points (hard)</button>
-        <button class="b2">Challenge #2: 50 points (easy)</button>
-        <button class="b3">Challenge #3: mystery (master)</button>
-
-    </div>
 
 
-    <img src="sheep.gif" class="sheepgif" onclick="showNextMessage()">
+
+    <img src="../Images/sheep.gif" class="sheepgif" onclick="showNextMessage()">
     <script src="script.js"></script>
 </body>
 </html>

@@ -194,21 +194,33 @@
 
 
 <section class="slide4">
-    <h1>Settings</h1>
-    <form id="settings-form">
-        <p>Do you accept the terms and agreements?
-            <input type="checkbox" id="terms-checkbox">
-        </p>
-        <p>Do you accept all cookies?
-            <input type="checkbox" id="cookies-checkbox">
-        </p>
+    <h1>Add a payment method</h1>
+
+    <form id="add-payment-method">
+        <label>Please enter your name as it appears on your card: </label>
+                <input class="card-name" type="text" name="nickname" placeholder="e.g. John H. Smith" required>
+
+        <label>Please enter your 14-digit credit card number: </label>
+                <input class="card-number" type="text" name="nickname" placeholder="e.g. 1405 **** **** **** ****" required>
+        
+        <label>Expiry date:</label>
+                <input class="card-expiry" type="text" name="nickname" placeholder="MM/YY" required>
+
+        <label>CVV: </label>
+                <input class="card-expiry" type="text" name="nickname" placeholder="e.g. 841" required>
+
+                
+        <div class="authorize">
+            <input type="checkbox" id="authorize-checkbox">
+            I authorize Anglophoria to charge my card $4.99/month, with a first payment date of 
+        </div>
     </form>
 </section>
 
 <div id="selected-message"></div>
 <div id="selected-message2"></div>
 <button id="next" class="next" disabled>Next</button>
-<button id="finish" class="finish" disabled style="display: none;">Finish</button>
+<button id="finish" class="finish" disabled style="display: none;" onclick="window.location.href='../StartingPage/index.html'">Finish</button>
 </section>
 
 <footer>

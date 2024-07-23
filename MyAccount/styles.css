@@ -22,6 +22,39 @@
     text-align: left;
 }
 
+#add-payment-method{
+    width:400px;
+    font-size: 16px;;
+    background-color: rgb(37, 37, 37);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#add-payment-method input{
+width: 300px;
+}
+
+#add-payment-method .card-expiry{
+    width: 100px;
+}
+
+#add-payment-method .authorize {
+    margin-top: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#add-payment-method #authorize-checkbox {
+    height: 12px;
+    width: 12px;
+    margin: 0 8px 0 0; /* Add some space between the checkbox and the text */
+}
+
 .country{
     width: 100px;
     height:25px;
@@ -33,10 +66,10 @@ form .nickname{
 }
 
 form .bday {
-    width: 125px; /* Adjust width to your preference */
+    width: 125px;
     padding: 5px;
     margin-top: 10px;
-    box-sizing: border-box; /* Ensures padding is included in the width */
+    box-sizing: border-box; 
 }
 form label{
     margin-top: 20px;
@@ -144,22 +177,22 @@ h1 {
 }
 
 .details .bullet-points {
-    margin-left: 20px; /* Adjust as needed */
+    margin-left: 20px; 
     text-align: left;
 }
 
 .details .bullet-points p {
-    position: relative; /* Required for positioning the ::before pseudo-element */
-    padding-left: 15px; /* Space between bullet point and text */
+    position: relative; 
+    padding-left: 15px; 
 }
 
 .details .bullet-points p::before {
-    content: "\2022"; /* Bullet point character (•) */
+    content: "\2022"; 
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    color: #ffffff; /* Bullet point color */
+    color: #ffffff; 
 }
 
 

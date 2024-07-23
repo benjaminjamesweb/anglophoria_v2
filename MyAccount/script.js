@@ -94,16 +94,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remove the 'selected' class from all levels
         document.querySelectorAll('.levels p').forEach(p => p.classList.remove('selected'));
 
-        // Add the 'selected' class to the clicked element
+
         element.classList.add('selected');
 
-        // Enable the Next button and trigger animation for slide 1
+
         let nextButton = document.getElementById('next');
         nextButton.disabled = false;
         nextButton.classList.add('enabled');
     }
 
-    // Add event listeners to the level buttons for slide 1
+
     document.getElementById('a1').addEventListener('click', function() {
         handleLevelClick('A1', this);
     });
@@ -131,22 +131,22 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleVersionClick(version, element) {
         user_chosen_version = version;
 
-        // Update the message
+
         document.getElementById('selected-message2').innerText = `You've selected the ${version} version`;
 
-        // Remove the 'selected' class from all versions
+
         document.querySelectorAll('.versions div').forEach(div => div.classList.remove('selected'));
 
-        // Add the 'selected' class to the clicked element
+
         element.classList.add('selected');
 
-        // Enable the Next button and trigger animation for slide 3
+
         let nextButton = document.getElementById('next');
         nextButton.disabled = false;
         nextButton.classList.add('enabled');
     }
 
-    // Add event listeners to the version divs for slide 3
+
     document.getElementById('free-version').addEventListener('click', function() {
         handleVersionClick('Free', this);
     });
@@ -155,21 +155,15 @@ document.addEventListener('DOMContentLoaded', function() {
         handleVersionClick('Premium', this);
     });
 
-    // Handle the checkbox clicks for slide 4
-    document.getElementById('terms-checkbox').addEventListener('change', function() {
-        checkFinishConditions();
-    });
-
-    document.getElementById('cookies-checkbox').addEventListener('change', function() {
+    document.getElementById('authorize-checkbox').addEventListener('change', function() {
         checkFinishConditions();
     });
 
     function checkFinishConditions() {
-        const termsChecked = document.getElementById('terms-checkbox').checked;
-        const cookiesChecked = document.getElementById('cookies-checkbox').checked;
+        const authorizeChecked = document.getElementById('authorize-checkbox').checked;
 
         let finishButton = document.getElementById('finish');
-        if (termsChecked && cookiesChecked) {
+        if (authorizeChecked) {
             finishButton.disabled = false;
             finishButton.classList.add('enabled');
         } else {
