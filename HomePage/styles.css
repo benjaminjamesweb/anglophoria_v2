@@ -228,7 +228,7 @@ footer {
 }
 
 .game-tile:hover {
-    margin: 20px;
+    margin: 15px;
 }
 
 /* Game info on hover */
@@ -249,4 +249,51 @@ footer {
 
 .game-tile:hover .game-info {
     display: block;
+}
+
+
+.game-details {
+    position: fixed;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 400px;
+    background-color: rgb(43, 43, 43);
+    border-radius: 10px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-details .inner {
+
+    background-color: rgb(150, 150, 150);
+    border-radius: 10px;
+    padding: 20px;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-details h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.game-details img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px 0;
+}
+
+.game-details div {
+    font-size: 18px;
+    margin: 5px 0;
 }
