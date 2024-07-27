@@ -189,26 +189,31 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 900px;
     padding: 20px;
     text-align: center;
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 /* Games grid */
 .games-flex {
+    width: 879px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 
 /* Game tile images */
 .game-tile {
     position: relative;
     transition: margin 0.3s;
+    margin: 10px;
 }
 
 /* Game tile images */
@@ -228,7 +233,7 @@ footer {
 }
 
 .game-tile:hover {
-    margin: 15px;
+    margin: 25px;
 }
 
 /* Game info on hover */
@@ -254,23 +259,22 @@ footer {
 
 .game-details {
     position: fixed;
+    height: 100vh;
     top: 50%;
-    right: 2%;
+    right: 0%;
     transform: translateY(-50%);
     width: 400px;
-    height: 400px;
     background-color: rgb(43, 43, 43);
-    border-radius: 10px;
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
     padding: 20px;
     display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 .game-details .inner {
-
-    background-color: rgb(150, 150, 150);
+    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     padding: 20px;
     height: 80%;
@@ -278,12 +282,11 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .game-details h2 {
-    margin: 0;
-    font-size: 24px;
+    font-size: 34px;
 }
 
 .game-details img {
