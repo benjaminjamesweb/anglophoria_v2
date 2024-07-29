@@ -1,53 +1,17 @@
 function toggleMenu() {
-    var menu = document.getElementById("side-menu");
-    if (menu.style.width === "250px") {
-        menu.style.width = "0";
-    } else {
-        menu.style.width = "250px";
-    }
+    const menu = document.getElementById("side-menu");
+    menu.style.width = (menu.style.width === "250px") ? "0" : "250px";
 }
 
+document.getElementById('start-game-button').addEventListener('click', () => {
+    document.getElementById('pre-game-display').style.display = 'none';
+    document.getElementById('game-display').style.display = 'block';
+    startGame();
+});
 
-document.querySelectorAll('.game-tile').forEach(tile => {
-    tile.addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        const detailsSection = document.getElementById('game-details');
-        const title = this.dataset.title;
-        const imgSrc = this.dataset.img;
-        const level = this.dataset.level;
-        const category = this.dataset.category;
-
-        if (detailsSection.style.display === 'flex' &&
-            document.getElementById('game-title').textContent === title) {
-            detailsSection.style.display = 'none';
-        } else {
-            document.getElementById('game-title').textContent = title;
-            document.getElementById('game-image').src = imgSrc;
-            document.getElementById('game-level').textContent = level;
-            document.getElementById('game-category').textContent = category;
-
-            if (!document.getElementById('levelsDropdown')) {
-                const newContent = `
-                    <select id="levelsDropdown">
-                        <option value="a1" selected>A1</option>
-                        <option value="a2">A2</option>
-                        <option value="b1">B1</option>
-                        <option value="b2">B2</option>
-                        <option value="c1">C1</option>
-                        <option value="c2">C2</option>
-                    </select>
-                `;
-                detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
-            }
-
-            detailsSection.style.display = 'flex';
-        }
-    });
-});const ingredients = [
+const ingredients = [
     'apple', 'banana', 'carrot', 'grape', 'lettuce', 'mango', 'onion', 'orange', 
     'pear', 'pepper', 'potato', 'pumpkin', 'strawberry', 'tomato', 'watermelon'
-    // Add more as needed
 ];
 
 const pointsPerTurn = 10;
@@ -60,7 +24,6 @@ let turnTime = 5;
 let currentIngredient = '';
 let turnInterval;
 let gameInterval;
-let pauseInterval;
 
 const pointsEarnedElement = document.querySelector('.points-earned');
 const gameCountdownElement = document.querySelector('.game-countdown');
@@ -68,18 +31,10 @@ const turnCountdownElement = document.querySelector('.turn-countdown');
 const ingredientsDisplayElement = document.querySelector('.ingredients-display');
 const speechBubbleElement = document.getElementById('speech-bubble');
 const hornSound = document.getElementById('horn-sound');
-const mainContentElement = document.querySelector('.main-content');
-const startOverlayElement = document.getElementById('start-overlay');
-const startGameButton = document.getElementById('start-game-button');
+const replayGameButton = document.getElementById('replay-game-button');
 const instructionsButton = document.getElementById('instructions-button');
 const instructionsOverlayElement = document.getElementById('instructions-overlay');
 const closeInstructionsButton = document.getElementById('close-instructions-button');
-
-startGameButton.addEventListener('click', () => {
-    startOverlayElement.style.display = 'none';
-    mainContentElement.style.display = 'block';
-    startGame();
-});
 
 instructionsButton.addEventListener('click', () => {
     instructionsOverlayElement.style.display = 'flex';
@@ -89,6 +44,15 @@ closeInstructionsButton.addEventListener('click', () => {
     instructionsOverlayElement.style.display = 'none';
 });
 
+replayGameButton.addEventListener('click', () => {
+    gamePoints = 0;
+    gameTime = 60;
+    pointsEarnedElement.textContent = `Points: ${gamePoints}`;
+    gameCountdownElement.textContent = `Game Time: ${gameTime}`;
+    replayGameButton.style.display = 'none';
+    startGame();
+});
+
 function startGame() {
     displayIngredients();
     startGameCountdown();
@@ -96,6 +60,7 @@ function startGame() {
 }
 
 function displayIngredients() {
+    ingredientsDisplayElement.innerHTML = ''; 
     ingredients.forEach(ingredient => {
         const img = document.createElement('img');
         img.src = `${ingredient}.jpg`;
@@ -117,10 +82,14 @@ function startGameCountdown() {
 }
 
 function startTurn() {
+    clearInterval(turnInterval); // Clear any existing interval
     currentIngredient = ingredients[Math.floor(Math.random() * ingredients.length)];
     speechBubbleElement.textContent = `Find the ${currentIngredient}!`;
+    speechBubbleElement.style.color = 'white'; // Reset color to white
     turnTime = 5;
     updateTurnCountdown();
+
+    console.log("Starting new turn with ingredient:", currentIngredient);
 
     turnInterval = setInterval(() => {
         turnTime--;
@@ -132,9 +101,21 @@ function startTurn() {
     }, 1000);
 }
 
+function indicateTurnLoss() {
+    turnCountdownElement.textContent = `Turn Time: 0`;
+    turnCountdownElement.style.color = 'red';
+    speechBubbleElement.textContent = 'Times up!';
+    speechBubbleElement.style.color = 'red';
+    hornSound.play();
+    setTimeout(() => {
+        turnCountdownElement.style.color = 'white';
+        startTurn(); // Automatically start the next turn after a pause
+    }, 2000);
+}
+
 function updateTurnCountdown() {
     turnCountdownElement.textContent = `Turn Time: ${turnTime}`;
-    turnCountdownElement.style.color = 'white';
+    turnCountdownElement.style.color = turnTime < 0 ? 'red' : 'white';
 }
 
 function checkIngredient(ingredient) {
@@ -142,7 +123,7 @@ function checkIngredient(ingredient) {
         gamePoints += pointsPerTurn;
         pointsEarnedElement.textContent = `Points: ${gamePoints}`;
         clearInterval(turnInterval);
-        startTurn();
+        setTimeout(startTurn, 500); // Short pause before starting the next turn
     } else {
         gamePoints -= pointsDeducted;
         pointsEarnedElement.textContent = `Points: ${gamePoints}`;
@@ -152,30 +133,10 @@ function checkIngredient(ingredient) {
         }, 500);
     }
 }
-function indicateTurnLoss() {
-    turnCountdownElement.textContent = `Turn Time: 0`;
-    turnCountdownElement.style.color = 'red';
-    hornSound.play();
-    setTimeout(() => {
-        turnCountdownElement.style.color = 'white';
-        startTurn();
-    }, 2000);
-}
-const replayGameButton = document.getElementById('replay-game-button');
-
-replayGameButton.addEventListener('click', () => {
-    gamePoints = 0;
-    gameTime = 60;
-    pointsEarnedElement.textContent = `Points: ${gamePoints}`;
-    gameCountdownElement.textContent = `Game Time: ${gameTime}`;
-    startOverlayElement.style.display = 'none';
-    replayGameButton.style.display = 'none';
-    mainContentElement.style.display = 'block';
-    startGame();
-});
 
 function endGame() {
     clearInterval(turnInterval);
+    clearInterval(gameInterval);
     speechBubbleElement.textContent = `Game over! You scored ${gamePoints} points.`;
     hornSound.play();
     replayGameButton.style.display = 'block';

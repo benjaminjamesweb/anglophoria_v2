@@ -1,26 +1,5 @@
-.icicles {
-    position: fixed;
-    top: 60px; 
-    left: 0px;
-    display: flex;
-    overflow: hidden;
-    flex-wrap: nowrap;
-    width: 100vw;
-}
-
-.whitebar{
-    position: fixed;
-    top: 0;
-    left:0px;
-    width: 100vw;
-    height: 60px;
-    display:flex;
-    background-color: white;
-}
-
 body {
-    background: linear-gradient(to top, rgb(35, 35, 35), black);
-    margin-top: 0px; 
+    background-color: black;
     font-family: "Poetsen One", sans-serif;
     color: rgb(255, 255, 255);
     text-shadow: 
@@ -32,11 +11,31 @@ body {
 }
 
 
+.icicles {
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    width: 100vw;
+}
+
+.whitebar {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    background-color: white;
+}
+
 .trees {
     position: fixed;
     top: 70%;
     left: 50%;
-    width: 90vw; 
+    width: 90vw;
     height: 220px;
     transform: translate(-50%, -50%);
     border: 1px solid transparent;
@@ -87,11 +86,10 @@ body {
     left: 0%;
 }
 
-
-.trees .sheep { 
-    top: 40%; 
-    left: -5%; 
-    height: 300px; 
+.trees .sheep {
+    top: 40%;
+    left: -5%;
+    height: 300px;
     width: auto;
     z-index: 1;
 }
@@ -114,8 +112,8 @@ footer {
     border-radius: 10px;
 }
 
-.anglophoria img{
-    width: 400px; 
+.anglophoria img {
+    width: 400px;
     margin: 20px;
     margin-bottom: 0px;
     height: auto;
@@ -126,7 +124,6 @@ footer {
     font-size: 18px;
     color: black;
 }
-
 
 #menu-tab {
     position: fixed;
@@ -159,17 +156,18 @@ footer {
     color: white;
     display: block;
     transition: 0.3s;
-    border-bottom: 1px solid white; 
+    border-bottom: 1px solid white;
 }
 
 .side-menu a:hover {
     color: #f1f1f1;
-    background-color: #575757; 
+    background-color: #575757;
 }
 
 .side-menu a.close-btn {
     border-bottom: none;
 }
+
 .close-btn {
     position: absolute;
     top: 0;
@@ -177,6 +175,10 @@ footer {
     font-size: 36px;
     margin-left: 50px;
     border-bottom: none;
+}
+
+.game-display {
+    display: none; /* Initially hide the game display */
 }
 
 .main-content {
@@ -194,12 +196,13 @@ footer {
     justify-content: center;
 }
 
-.stats{
+.stats {
     align-items: center;
     display: flex;
     justify-content: center;
     gap: 40px;
 }
+
 .points-earned,
 .game-countdown,
 .turn-countdown {
@@ -272,7 +275,6 @@ footer {
     background-size: cover;
 }
 
-
 .game-welcome {
     position: fixed;
     top: 30%;
@@ -342,7 +344,6 @@ footer {
     text-align: center;
     line-height: 30px;
 }
-
 
 #replay-game-button {
     padding: 12px;

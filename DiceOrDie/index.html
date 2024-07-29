@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +15,7 @@
     <div class="snowflake-container">
         <div class="snowflake"></div>
     </div>
-<div class="whitebar"></div>
+    <div class="whitebar"></div>
 
     <div class="icicles">
         <img src="../Images/icicle.png" alt="">
@@ -28,14 +29,12 @@
         <img src="../Images/icicle.png" alt="">
         <img src="../Images/icicle.png" alt="">
         <img src="../Images/icicle.png" alt="">
-        <img src="../Images/icicle.png" alt="">
-        <img src="../Images/icicle.png" alt="">
-        <img src="../Images/icicle.png" alt="">
+        <!-- Add more icicle images as needed -->
     </div>
 
     <div class="anglophoria">
-            <img src="../Images/anglophoria2.png" alt="">
-            <p>Games for improving your English</p>
+        <img src="../Images/anglophoria2.png" alt="">
+        <p>Games for improving your English</p>
     </div>
 
     <div class="trees">
@@ -49,7 +48,6 @@
         <!-- <img src="../Images/sheep.gif" alt="" class="sheep" onclick="showNextMessage()"> -->
     </div>
 
-
     <div id="menu-tab" onclick="toggleMenu()">☰</div>
 
     <!-- Side menu -->
@@ -61,34 +59,30 @@
         <a href="#contact">Contact</a>
     </div>
 
-
-    <div class="main-content">
-        <div class="stats">
-            <div class="points-earned">Points: 0</div>
-            <div class="game-countdown">Game Time: 60</div>
-            <div class="turn-countdown">Turn Time: 5</div>
-        </div>
-
+    <div class="game-display" id="game-display">
+        <div class="main-content">
+            <div class="stats">
+                <div class="points-earned">Points: 0</div>
+                <div class="game-countdown">Game Time: 60</div>
+                <div class="turn-countdown">Turn Time: 5</div>
+                <audio id="horn-sound" src="horn.mp3"></audio>
+            </div>
             <div class="ingredients-display"></div>
-
+        </div>
+        <div class="chef">
+            <img src="chef.jpg" alt="Chef">
+            <div class="speech-bubble" id="speech-bubble">Find the apple!</div>
+        </div>
     </div>
 
-    <div class="chef">
-        <img src="chef.jpg" alt="Chef">
-        <div class="speech-bubble" id="speech-bubble">Find the apple!</div>
-        
+    <div class="pre-game-display" id="pre-game-display">
+        <div class="game-welcome">
+            <button class="start-button" id="start-game-button">Start Game</button>
+            <button class="instructions-button" id="instructions-button">Instructions</button>
+        </div>
+        <div class="speaker-icon"></div>
     </div>
-    <button class="start-button" id="replay-game-button" style="display: none;">Replay Game</button>
-    <div class="speaker-icon"></div>
 
-    
-    <audio id="horn-sound" src="horn.mp3"></audio>
-
-    <div class="game-welcome" id="start-overlay">
-        <button class="start-button" id="start-game-button">Start Game</button>
-        <button class="instructions-button" id="instructions-button">Instructions</button>
-    </div>
-    
     <div class="instructions-overlay" id="instructions-overlay">
         <div class="instructions-content">
             <button class="close-button" id="close-instructions-button">X</button>
@@ -99,8 +93,7 @@
         </div>
     </div>
 
-
-<script src="../Resources/snowflakes.js"></script>
-<script src="script.js"></script>
+    <script src="../Resources/snowflakes.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
