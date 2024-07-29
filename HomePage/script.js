@@ -15,8 +15,8 @@ document.querySelectorAll('.game-tile').forEach(tile => {
         const detailsSection = document.getElementById('game-details');
         const title = this.dataset.title;
         const imgSrc = this.dataset.img;
-        const level = this.dataset.level;
-        const category = this.dataset.category;
+        const level = this.dataset.header;
+        const category = this.dataset.description;
 
         if (detailsSection.style.display === 'flex' &&
             document.getElementById('game-title').textContent === title) {
@@ -29,6 +29,8 @@ document.querySelectorAll('.game-tile').forEach(tile => {
 
             if (!document.getElementById('levelsDropdown')) {
                 const newContent = `
+                <div class="confirm-level">
+                <p> Confirm your level: </p>
                     <select id="levelsDropdown">
                         <option value="a1" selected>A1</option>
                         <option value="a2">A2</option>
@@ -37,6 +39,8 @@ document.querySelectorAll('.game-tile').forEach(tile => {
                         <option value="c1">C1</option>
                         <option value="c2">C2</option>
                     </select>
+                    </div>
+                  <button class="playButton" onclick="window.location.href='../DiceOrDie/index.html'">Play</button>
                 `;
                 detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
             }
@@ -45,3 +49,16 @@ document.querySelectorAll('.game-tile').forEach(tile => {
         }
     });
 });
+
+document.querySelector('.playButton').addEventListener('click', function() {
+    window.location.href = '../DiceOrDie/index.html';
+});
+
+function toggleParameters() {
+    var parametersDiv = document.getElementById('parameters');
+    if (parametersDiv.style.display === 'block') {
+        parametersDiv.style.display = 'none';
+    } else {
+        parametersDiv.style.display = 'block';
+    }
+}

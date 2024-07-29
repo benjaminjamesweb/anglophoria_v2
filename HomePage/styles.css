@@ -8,13 +8,13 @@
     width: 100vw;
 }
 
-.whitebar{
+.whitebar {
     position: fixed;
     top: 0;
-    left:0px;
+    left: 0px;
     width: 100vw;
     height: 60px;
-    display:flex;
+    display: flex;
     background-color: white;
 }
 
@@ -31,20 +31,19 @@ body {
     font-size: 24px; 
 }
 
-
 .trees {
     position: fixed;
     top: 70%;
     left: 50%;
-    width: 90vw; /* Adjusted to 80% */
-    height: 220px; /* Adjusted to 80% */
+    width: 90vw; 
+    height: 220px; 
     transform: translate(-50%, -50%);
     border: 1px solid transparent;
 }
 
 .trees img {
     position: absolute;
-    width: 80px; /* Adjusted to 80% */
+    width: 80px;
     height: auto;
 }
 
@@ -87,7 +86,6 @@ body {
     left: 0%;
 }
 
-
 .trees .sheep { 
     top: 40%; 
     left: -5%; 
@@ -103,8 +101,6 @@ footer {
     z-index: 1000;
 }
 
-
-
 .anglophoria {
     position: fixed;
     top: -3%;
@@ -116,7 +112,7 @@ footer {
     border-radius: 10px;
 }
 
-.anglophoria img{
+.anglophoria img {
     width: 400px; 
     margin: 20px;
     margin-bottom: 0px;
@@ -129,8 +125,6 @@ footer {
     color: black;
 }
 
-
-/* Menu tab */
 #menu-tab {
     position: fixed;
     top: 20px;
@@ -143,7 +137,6 @@ footer {
     border-radius: 0 5px 5px 0;
 }
 
-/* Side menu */
 .side-menu {
     height: 100%;
     width: 0;
@@ -154,26 +147,28 @@ footer {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    z-index: 10;
 }
 
-.side-menu a {
+.side-menu .links a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: white;
     display: block;
     transition: 0.3s;
-    border-bottom: 1px solid white;  /* Add this line for horizontal bar */
+    border-bottom: 1px solid white; 
 }
 
-.side-menu a:hover {
+.side-menu .links a:hover {
     color: #f1f1f1;
-    background-color: #575757;  /* Add hover background color */
+    background-color: #575757; 
 }
 
 .side-menu a.close-btn {
     border-bottom: none;
 }
+
 .close-btn {
     position: absolute;
     top: 0;
@@ -183,7 +178,51 @@ footer {
     border-bottom: none;
 }
 
-/* Center the main content section */
+.parameters {
+    background-color: rgb(51, 51, 51);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    /* Ensure it is hidden by default */
+}
+
+#levelsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#levelsOptions input {
+    margin-left: 30px;
+}
+
+#levelsOptions label {
+    margin-right: 30px;
+}
+
+.label-box {
+    font-size: 18px;
+}
+
+#categoriesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.categoriesOptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.categoriesOptions label {
+    text-align: center;
+}
+
 .main-content {
     position: fixed;
     top: 50%;
@@ -199,8 +238,6 @@ footer {
     justify-content: center;
 }
 
-
-/* Games grid */
 .games-flex {
     width: 879px;
     display: flex;
@@ -209,23 +246,21 @@ footer {
     align-items: center;
 }
 
-/* Game tile images */
 .game-tile {
     position: relative;
     transition: margin 0.3s;
     margin: 10px;
 }
 
-/* Game tile images */
 .game-tile img {
     width: 80px;
     height: 80px;
     cursor: pointer;
     transition: transform 0.3s;
     background-color: pink;
+    margin: 0px;
 }
 
-/* Hover effect for game tile images and margins */
 .game-tile:hover img {
     transform: scale(1.1);
     z-index: 1;
@@ -236,15 +271,13 @@ footer {
     margin: 25px;
 }
 
-/* Game info on hover */
 .game-info {
     display: none;
     position: absolute;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(242, 242, 242);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     padding: 5px;
     font-size: 16px;
     border-radius: 5px;
@@ -255,7 +288,6 @@ footer {
 .game-tile:hover .game-info {
     display: block;
 }
-
 
 .game-details {
     position: fixed;
@@ -300,3 +332,46 @@ footer {
     font-size: 18px;
     margin: 5px 0;
 }
+
+.game-details #game-level {
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.game-details #game-category{
+    margin-top: 30px;
+    text-align: center;
+    background-color: #3d3d3d;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.game-details .confirm-level{
+    margin-top: 30px;
+    text-align: center;
+    background-color: rgb(36, 36, 36);
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
+}
+
+.confirm-level #levelsDropdown{
+width: 100px;
+font-size: 20px;
+text-align: center;
+background-color: rgb(201, 80, 164);
+border-radius: 8px;
+margin-top: 0px;
+}
+
+.playButton{
+    width: 150px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    background-color: rgb(53, 255, 3);
+    border-radius: 8px;
+    margin-top: 100px;
+    }
+    
+

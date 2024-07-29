@@ -36,15 +36,15 @@ body {
     position: fixed;
     top: 70%;
     left: 50%;
-    width: 90vw; /* Adjusted to 80% */
-    height: 220px; /* Adjusted to 80% */
+    width: 90vw; 
+    height: 220px;
     transform: translate(-50%, -50%);
     border: 1px solid transparent;
 }
 
 .trees img {
     position: absolute;
-    width: 80px; /* Adjusted to 80% */
+    width: 80px;
     height: auto;
 }
 
