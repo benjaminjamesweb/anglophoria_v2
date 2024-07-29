@@ -19,6 +19,7 @@ body {
     overflow: hidden;
     flex-wrap: nowrap;
     width: 100vw;
+    z-index: 1;
 }
 
 .whitebar {
@@ -192,6 +193,7 @@ footer {
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -202,6 +204,7 @@ footer {
     justify-content: center;
     gap: 40px;
 }
+
 
 .points-earned,
 .game-countdown,
@@ -217,7 +220,10 @@ footer {
 }
 
 .ingredients-display {
+    margin-top: 20px;
     height: 400px;
+    background-color: rgb(36, 36, 36);
+    border-radius: 10px;
 }
 
 .ingredients-display img {
