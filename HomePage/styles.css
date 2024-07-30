@@ -257,7 +257,7 @@ footer {
     height: 80px;
     cursor: pointer;
     transition: transform 0.3s;
-    background-color: pink;
+    background-color: rgb(233, 123, 255);
     margin: 0px;
 }
 
@@ -319,6 +319,12 @@ footer {
 
 .game-details h2 {
     font-size: 34px;
+    transition: font-size 0.3s ease; /* Apply transition to font-size */
+}
+
+.game-details h2:hover {
+    font-size: 44px;
+    color: #be00f8;
 }
 
 .game-details img {
@@ -326,8 +332,14 @@ footer {
     height: 200px;
     object-fit: cover;
     margin: 10px 0;
+    transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease; /* Add transitions for width, height, and margin */
 }
 
+.game-details img:hover {
+    width: 250px;
+    height: 250px;
+    margin-top: 0;
+}
 .game-details div {
     font-size: 18px;
     margin: 5px 0;
@@ -337,6 +349,28 @@ footer {
     margin-top: 30px;
     font-size: 30px;
     text-align: center;
+    transition: background-color 0.3s ease; 
+}
+
+.game-details a.close-btn {
+    border-bottom: none;
+    text-decoration: none; 
+    border: none; 
+}
+
+.game-details .close-btn {
+    font-family: "Poetsen One", sans-serif;
+    position: absolute;
+    top: 36px;
+    right: 380px;
+    font-size: 26px;
+    margin-left: 50px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
+
+.game-details #game-level:hover {
+color: #be00f8;
 }
 
 .game-details #game-category{
@@ -345,9 +379,17 @@ footer {
     background-color: #3d3d3d;
     padding: 20px;
     border-radius: 10px;
+    transition: background-color 0.3s ease; 
+}
+
+.game-details #game-category:hover{
+
+    background-color: #be00f8;
+
 }
 
 .game-details .confirm-level{
+    transition: background-color 0.3s ease; 
     margin-top: 30px;
     text-align: center;
     background-color: rgb(36, 36, 36);
@@ -355,21 +397,30 @@ footer {
     border-radius: 10px;
 }
 
+.game-details .confirm-level:hover{
+
+    background-color: #be00f8;
+}
+
 .confirm-level #levelsDropdown{
 width: 100px;
 font-size: 20px;
 text-align: center;
-background-color: rgb(201, 80, 164);
+color: white;
+background-color: rgb(39, 39, 39);
 border-radius: 8px;
 margin-top: 0px;
+font-family: "Poetsen One", sans-serif;
 }
+
+
 
 .playButton{
     width: 150px;
     height: 50px;
     font-size: 30px;
     text-align: center;
-    background-color: rgb(58, 136, 38);
+    background-color: rgb(29, 80, 16);
     border-radius: 8px;
     font-family: "Poetsen One", sans-serif;
     margin-top: 50px;

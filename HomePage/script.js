@@ -62,3 +62,8 @@ function toggleParameters() {
         parametersDiv.style.display = 'block';
     }
 }
+
+function closeGameDetails() {
+    document.getElementById('game-details').style.display = 'none';
+}
+
