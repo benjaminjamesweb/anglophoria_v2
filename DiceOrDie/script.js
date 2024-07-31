@@ -14,7 +14,7 @@ document.getElementById('start-game-button').addEventListener('click', () => {
 });
 
 const ingredients = [
-    'apple', 'banana', 'carrot', 'grape', 'lettuce', 'mango', 'onion', 'orange', 
+    'apple', 'banana', 'carrot', 'grapes', 'lettuce', 'pineapple', 'onion', 'orange', 
     'pear', 'pepper', 'potato', 'pumpkin', 'strawberry', 'tomato', 'watermelon'
 ];
 
