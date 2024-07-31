@@ -3,6 +3,10 @@ function toggleMenu() {
     menu.style.width = (menu.style.width === "250px") ? "0" : "250px";
 }
 
+document.getElementById('restart-button').addEventListener('click', function() {
+    restartGame();
+});
+
 document.getElementById('start-game-button').addEventListener('click', () => {
     document.getElementById('pre-game-display').style.display = 'none';
     document.getElementById('game-display').style.display = 'block';
@@ -59,11 +63,22 @@ function startGame() {
     startTurn();
 }
 
+function restartGame() {
+    gamePoints = 0;
+    gameTime = 60;
+    turnTime = 5;
+    pointsEarnedElement.textContent = `Points: ${gamePoints}`;
+    gameCountdownElement.textContent = `Game Time: ${gameTime}`;
+    turnCountdownElement.textContent = `Turn Time: ${turnTime}`;
+    replayGameButton.style.display = 'none'; // Hide the replay button if it was displayed
+    startGame();
+}
+
 function displayIngredients() {
     ingredientsDisplayElement.innerHTML = ''; 
     ingredients.forEach(ingredient => {
         const img = document.createElement('img');
-        img.src = `${ingredient}.jpg`;
+        img.src = `Images/${ingredient}.png`;
         img.alt = ingredient;
         img.addEventListener('click', () => checkIngredient(ingredient));
         ingredientsDisplayElement.appendChild(img);

@@ -289,27 +289,29 @@ footer {
     display: block;
 }
 
+
 .game-details {
     position: fixed;
     height: 100vh;
     top: 50%;
     right: 0%;
     transform: translateY(-50%);
-    width: 400px;
+    width: 25vw; /* Converted from 400px */
     background-color: rgb(43, 43, 43);
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
-    padding: 20px;
+    box-shadow: -0.2vw 0 0.5vw rgba(0,0,0,0.5); /* Converted from -2px and 5px */
+    padding: 2vh; /* Converted from 20px */
     display: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 .game-details .inner {
     background-color: rgb(0, 0, 0);
-    border-radius: 10px;
-    padding: 20px;
-    height: 72%;
+    padding: 2vh; /* Converted from 20px */
+    height: 100%;
+    margin:0px;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -318,116 +320,112 @@ footer {
 }
 
 .game-details h2 {
-    font-size: 34px;
-    transition: font-size 0.3s ease; /* Apply transition to font-size */
+    font-size: 3.4vh; /* Use vh for responsive font size */
+    transition: font-size 0.3s ease;
 }
 
 .game-details h2:hover {
-    font-size: 44px;
+    font-size: 4.4vh;
     color: #be00f8;
 }
 
 .game-details img {
-    width: 200px;
-    height: 200px;
+    width: 70%;
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
-    margin: 10px 0;
-    transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease; /* Add transitions for width, height, and margin */
+    margin: 1vh 0; /* Converted from 10px */
+    transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease;
 }
 
 .game-details img:hover {
-    width: 250px;
-    height: 250px;
+    width: 75%;
+    height: auto; /* Maintain aspect ratio */
     margin-top: 0;
 }
+
 .game-details div {
-    font-size: 18px;
-    margin: 5px 0;
+    font-size: 1.8vh; /* Use vh for font size */
+    margin: 0.5vh 0; /* Converted from 5px */
 }
 
 .game-details #game-level {
-    margin-top: 30px;
-    font-size: 30px;
+    margin-top: 2vh; /* Adjusted margin */
+    font-size: 3vh; /* Use vh for font size */
     text-align: center;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
 .game-details a.close-btn {
     border-bottom: none;
-    text-decoration: none; 
-    border: none; 
+    text-decoration: none;
+    border: none;
 }
 
 .game-details .close-btn {
     font-family: "Poetsen One", sans-serif;
     position: absolute;
-    top: 36px;
-    right: 380px;
-    font-size: 26px;
-    margin-left: 50px;
+    top: 3.6vh; /* Converted from 36px */
+    right: 25vw; /* Converted from 380px */
+    font-size: 3vh; /* Use vh for font size */
+    margin-left: 5vh; /* Converted from 50px */
     background-color: rgb(43, 43, 43);
     color: white;
+    z-index: 30;
 }
 
 .game-details #game-level:hover {
-color: #be00f8;
+    color: #be00f8;
 }
 
-.game-details #game-category{
-    margin-top: 30px;
+.game-details #game-category {
+    margin-top: 3vh; /* Converted from 30px */
     text-align: center;
     background-color: #3d3d3d;
-    padding: 20px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease; 
+    padding: 2vh; /* Converted from 20px */
+    border-radius: 1vh; /* Converted from 10px */
+    transition: background-color 0.3s ease;
 }
 
-.game-details #game-category:hover{
-
+.game-details #game-category:hover {
     background-color: #be00f8;
-
 }
 
-.game-details .confirm-level{
-    transition: background-color 0.3s ease; 
-    margin-top: 30px;
+.game-details .confirm-level {
+    transition: background-color 0.3s ease;
+    margin-top: 3vh; /* Converted from 30px */
     text-align: center;
     background-color: rgb(36, 36, 36);
-    padding: 5px 20px 5px 20px;
-    border-radius: 10px;
+    padding: 0.5vh 2vh; /* Converted from 5px 20px */
+    border-radius: 1vh; /* Converted from 10px */
 }
 
-.game-details .confirm-level:hover{
-
+.game-details .confirm-level:hover {
     background-color: #be00f8;
 }
 
-.confirm-level #levelsDropdown{
-width: 100px;
-font-size: 20px;
-text-align: center;
-color: white;
-background-color: rgb(39, 39, 39);
-border-radius: 8px;
-margin-top: 0px;
-font-family: "Poetsen One", sans-serif;
+.confirm-level #levelsDropdown {
+    width: 10vw; /* Converted from 100px */
+    font-size: 2vh; /* Use vh for font size */
+    text-align: center;
+    color: white;
+    background-color: rgb(39, 39, 39);
+    border-radius: 0.8vh; /* Converted from 8px */
+    margin-top: 0;
+    font-family: "Poetsen One", sans-serif;
 }
 
-
-
-.playButton{
-    width: 150px;
-    height: 50px;
-    font-size: 30px;
+.playButton {
+    width: 15vw; /* Converted from 150px */
+    height: 5vh; /* Converted from 50px */
+    font-size: 3vh; /* Use vh for font size */
     text-align: center;
     background-color: rgb(29, 80, 16);
-    border-radius: 8px;
+    border-radius: 0.8vh; /* Converted from 8px */
     font-family: "Poetsen One", sans-serif;
-    margin-top: 50px;
-    transition: background-color 0.3s ease; 
+    margin-top: auto; /* Converted from 50px */
+    transition: background-color 0.3s ease;
 }
 
-.playButton:hover{
+.playButton:hover {
     background-color: rgb(51, 255, 0);
 }
-

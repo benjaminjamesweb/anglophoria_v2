@@ -25,7 +25,7 @@ document.querySelectorAll('.game-tile').forEach(tile => {
             document.getElementById('game-title').textContent = title;
             document.getElementById('game-image').src = imgSrc;
             document.getElementById('game-level').textContent = level;
-            document.getElementById('game-category').textContent = category;
+            document.getElementById('game-category').innerHTML = category;
 
             if (!document.getElementById('levelsDropdown')) {
                 const newContent = `
