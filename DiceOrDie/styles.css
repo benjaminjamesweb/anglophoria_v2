@@ -183,7 +183,7 @@ footer {
 }
 
 .game-display {
-    display: none; /* Initially hide the game display */
+    display: none; 
 }
 
 .main-content {
@@ -410,14 +410,14 @@ gap: 10vw;
 }
 
 .user-controls button{
-    width: 15vw; /* Converted from 150px */
-    height: 5vh; /* Converted from 50px */
-    font-size: 3vh; /* Use vh for font size */
+    width: 15vw; 
+    height: 5vh;
+    font-size: 3vh;
     text-align: center;
     background-color: rgb(29, 80, 16);
-    border-radius: 0.8vh; /* Converted from 8px */
+    border-radius: 0.8vh;
     font-family: "Poetsen One", sans-serif;
-    margin-top: auto; /* Converted from 50px */
+    margin-top: auto;
     transition: background-color 0.3s ease;
 }
 

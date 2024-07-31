@@ -70,7 +70,7 @@ function restartGame() {
     pointsEarnedElement.textContent = `Points: ${gamePoints}`;
     gameCountdownElement.textContent = `Game Time: ${gameTime}`;
     turnCountdownElement.textContent = `Turn Time: ${turnTime}`;
-    replayGameButton.style.display = 'none'; // Hide the replay button if it was displayed
+    replayGameButton.style.display = 'none'; 
     startGame();
 }
 
@@ -97,10 +97,10 @@ function startGameCountdown() {
 }
 
 function startTurn() {
-    clearInterval(turnInterval); // Clear any existing interval
+    clearInterval(turnInterval); 
     currentIngredient = ingredients[Math.floor(Math.random() * ingredients.length)];
     speechBubbleElement.textContent = `Find the ${currentIngredient}!`;
-    speechBubbleElement.style.color = 'white'; // Reset color to white
+    speechBubbleElement.style.color = 'white';
     turnTime = 5;
     updateTurnCountdown();
 
@@ -124,7 +124,7 @@ function indicateTurnLoss() {
     hornSound.play();
     setTimeout(() => {
         turnCountdownElement.style.color = 'white';
-        startTurn(); // Automatically start the next turn after a pause
+        startTurn(); 
     }, 2000);
 }
 
@@ -138,7 +138,7 @@ function checkIngredient(ingredient) {
         gamePoints += pointsPerTurn;
         pointsEarnedElement.textContent = `Points: ${gamePoints}`;
         clearInterval(turnInterval);
-        setTimeout(startTurn, 500); // Short pause before starting the next turn
+        setTimeout(startTurn, 500); 
     } else {
         gamePoints -= pointsDeducted;
         pointsEarnedElement.textContent = `Points: ${gamePoints}`;
