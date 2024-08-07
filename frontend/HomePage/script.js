@@ -1,63 +1,60 @@
-async function logIn() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    try {
-        const response = await fetch('http://localhost:5000/api/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
-
-        if (!response.ok) {
-            const message = `An error has occurred: ${response.status}`;
-            throw new Error(message);
-        }
-
-        const data = await response.json();
-        console.log('You are logged in now');
-        alert('Login successful');
-        toggleLogin();
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Failed to log in');
-    }
-}
+const apiBaseUrl = 'http://localhost:5000';
 
 async function signUp() {
-    const email = document.getElementById('signup-email').value;
-    const password = document.getElementById('signup-password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
+  const username = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
 
-    if (password !== confirmPassword) {
-        alert('Passwords do not match');
-        return;
+  if (password !== confirmPassword) {
+    alert('Passwords do not match');
+    return;
+  }
+
+  try {
+    const response = await fetch(`${apiBaseUrl}/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      alert('Sign up successful');
+    } else {
+      alert(`Failed to sign up: ${data.error}`);
     }
-
-    try {
-        const response = await fetch('http://localhost:5000/api/auth/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
-
-        if (!response.ok) {
-            const message = `An error has occurred: ${response.status}`;
-            throw new Error(message);
-        }
-
-        const data = await response.json();
-        alert('Signup successful');
-        toggleSignUp();
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Failed to sign up');
-    }
+  } catch (error) {
+    alert(`Failed to sign up: ${error.message}`);
+  }
 }
+
+async function logIn() {
+  const username = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  try {
+    const response = await fetch(`${apiBaseUrl}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      alert('Login successful');
+    } else {
+      alert(`Failed to log in: ${data.error}`);
+    }
+  } catch (error) {
+    alert(`Failed to log in: ${error.message}`);
+  }
+}
+  
+
 
 function toggleMenu() {
     var menu = document.getElementById("side-menu");
@@ -111,9 +108,6 @@ document.querySelectorAll('.game-tile').forEach(tile => {
     });
 });
 
-document.querySelector('.playButton').addEventListener('click', function() {
-    window.location.href = '../DiceOrDie/index.html';
-});
 
 function toggleParameters() {
     var parametersDiv = document.getElementById('parameters');
