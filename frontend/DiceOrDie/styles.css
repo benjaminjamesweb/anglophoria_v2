@@ -227,7 +227,7 @@ footer {
 }
 
 .ingredients-display {
-    margin-top: 20px;
+    margin-top: 90px;
     height: 400px;
     background-color: rgb(36, 36, 36);
     border-radius: 10px;
@@ -237,7 +237,7 @@ footer {
     width: 100px;
     height: 100px;
     cursor: pointer;
-    margin: 20px;
+    margin: 25px;
 }
 
 .chef {

@@ -14,8 +14,8 @@ document.getElementById('start-game-button').addEventListener('click', () => {
 });
 
 const ingredients = [
-    'apple', 'banana', 'carrot', 'grapes', 'lettuce', 'pineapple', 'onion', 'orange', 
-    'pear', 'pepper', 'potato', 'pumpkin', 'strawberry', 'tomato', 'watermelon'
+    'apple', 'banana', 'carrot', 'grapes', 'lettuce', 'pineapple', 'orange', 
+    'pepper', 'pumpkin', 'strawberry', 'tomato', 'watermelon'
 ];
 
 const pointsPerTurn = 10;
@@ -99,7 +99,7 @@ function startGameCountdown() {
 function startTurn() {
     clearInterval(turnInterval); 
     currentIngredient = ingredients[Math.floor(Math.random() * ingredients.length)];
-    speechBubbleElement.textContent = `Find the ${currentIngredient}!`;
+    speechBubbleElement.textContent = `Dice the ${currentIngredient}!`;
     speechBubbleElement.style.color = 'white';
     turnTime = 5;
     updateTurnCountdown();
@@ -152,7 +152,7 @@ function checkIngredient(ingredient) {
 function endGame() {
     clearInterval(turnInterval);
     clearInterval(gameInterval);
-    speechBubbleElement.textContent = `Game over! You scored ${gamePoints} points.`;
+    speechBubbleElement.textContent = `Imbecile! You only scored ${gamePoints} points!`;
     hornSound.play();
     replayGameButton.style.display = 'block';
 }
