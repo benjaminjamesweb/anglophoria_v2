@@ -429,14 +429,14 @@ footer {
     background-color: rgb(51, 255, 0);
 }
 
-.logout, .signup, .contact, .my-account {
+.login, .signup, .contact, .my-account {
     display: none;
     background-color: #272727;
     padding-bottom: 50px;
     padding-top: 30px;
 }
 
-.logout-section, .signup-section, .contact-section, .my-account-section {
+.login-section, .signup-section, .contact-section, .my-account-section {
     display: flex;
     flex-direction: column;
 }

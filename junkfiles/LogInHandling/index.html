@@ -144,14 +144,39 @@
             </div>
 
 
-            <a href="javascript:void(0)" onclick="toggleLogout()">Log out</a>
-            <div class="logout" id="logout">
-                <div class="logout-section">
-                <h2>Are you sure you want to log out?</h2>
-                <button onclick="window.location.href='../HomePageBeforeLogIn/index.html'">Log out</button>
+            <a href="javascript:void(0)" onclick="toggleLogin()">Log in</a>
+            <div class="login" id="login">
+                <div class="login-section">
+                <h2>Log In</h2>
+                <label for="email">Email</label>
+                <input type="text" id="email">
+    
+                <label for="password">Password</label>
+                <input type="password" id="password">
+    
+                <button onClick="logIn()">Log in</button>
             </div>
             </div>
+            <a href="javascript:void(0)" onclick="toggleSignUp()">Sign up</a>
+        </div>
 
+
+        
+        <div class="signup" id="signup">
+            <div class="signup-section">
+                <h2>Sign up</h2>
+                <label for="username">Email</label>
+                <input type="text" id="signup-email">
+    
+                <label for="password">Create a Password</label>
+                <input type="password" id="signup-password">
+    
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password">
+    
+                <button onClick="signUp()">Sign Up</button>
+        </div>
+        </div>
 
        
 

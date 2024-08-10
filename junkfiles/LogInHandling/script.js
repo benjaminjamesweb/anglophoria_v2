@@ -1,14 +1,5 @@
+const apiBaseUrl = 'http://localhost:5000';
 
-
-function toggleMenu() {
-  var menu = document.getElementById("side-menu");
-  if (menu.style.width === "250px") {
-    hideAllSections();
-      menu.style.width = "0";
-  } else {
-      menu.style.width = "250px";
-  }
-}
 
 document.querySelectorAll('.game-tile').forEach(tile => {
   tile.addEventListener('click', function(event) {
@@ -52,10 +43,76 @@ document.querySelectorAll('.game-tile').forEach(tile => {
   });
 });
 
+async function signUp() {
+  const username = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  if (password !== confirmPassword) {
+    alert('Passwords do not match');
+    return;
+  }
+
+  try {
+    const response = await fetch(`${apiBaseUrl}/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      alert('Sign up successful');
+    } else {
+      alert(`Failed to sign up: ${data.error}`);
+    }
+  } catch (error) {
+    alert(`Failed to sign up: ${error.message}`);
+  }
+}
+
+async function logIn() {
+  const username = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  try {
+    const response = await fetch(`${apiBaseUrl}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const data = await response.json();
+    if (response.ok) {
+      alert('Login successful');
+    } else {
+      alert(`Failed to log in: ${data.error}`);
+    }
+  } catch (error) {
+    alert(`Failed to log in: ${error.message}`);
+  }
+}
+  
+
+function toggleMenu() {
+  var menu = document.getElementById("side-menu");
+  if (menu.style.width === "250px") {
+    hideAllSections();
+      menu.style.width = "0";
+  } else {
+      menu.style.width = "250px";
+  }
+}
+
 function hideAllSections() {
   // Hide all sections
   document.getElementById('parameters').style.display = 'none';
-  document.getElementById('logout').style.display = 'none';
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('signup').style.display = 'none';
   document.getElementById('contact').style.display = 'none';
   document.getElementById('my-account').style.display = 'none';
 }
@@ -81,11 +138,11 @@ function toggleParameters() {
   }
 }
 
-function toggleLogout() {
-  if (document.getElementById('logout').style.display === 'block') {
+function toggleLogin() {
+  if (document.getElementById('login').style.display === 'block') {
       hideAllSections();
   } else {
-      showSection('logout');
+      showSection('login');
   }
 }
 
