@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
 </head>
 <body>
     <div class="snowflake-container">
@@ -49,38 +51,59 @@
         <!-- <img src="../Images/sheep.gif" alt="" class="sheep" onclick="showNextMessage()"> -->
     </div>
 
-
-    <div id="menu-tab" onclick="toggleMenu()">☰</div>
-
     <!-- Side menu -->
     <!-- Side menu -->
     <div id="side-menu" class="side-menu">
         <div class="links">
-            <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
-            <a href="../HomePageBeforeLogIn/index.html">Home</a>
+
+            <div class="title-section">
+                <h2>Welcome to</h2>
+                <img src="../Images/anglophoria.png" alt="">
+            </div>
+                <div class="welcome-section">
+                    <p>Play mini games to train your English.</p>
+                    <p>Earn points to unlock more games.</p>
+                    <p>To start earning points, please log in or sign up.</p>
+
+                </div>
 
          
-            <a href="javascript:void(0)" onclick="toggleLogin()">Log in</a>
+                <a href="javascript:void(0)" onclick="toggleLogin()">
+                    Log in
+                    <span class="material-icons-outlined">chevron_right</span>
+                </a>
             <div class="login" id="login">
                 <div class="login-section">
                 <h2>Log In</h2>
+                <div class="fields">
                 <label for="email">Email</label>
                 <input type="text" id="email">
     
                 <label for="password">Password</label>
                 <input type="password" id="password">
+            </div>
     
                 <button onclick="window.location.href='../HomePage/index.html'">Log in</button>
+
+                <a class="go-back" onclick="window.location.href='../HomePageBeforeLogIn/index.html'">
+                    <span class="material-icons-outlined">chevron_left</span>
+                    Go Back
+                </a>
             </div>
             </div>
 
 
 
-            <a href="javascript:void(0)" onclick="toggleSignUp()">Sign up</a>
+            <a href="javascript:void(0)" onclick="toggleSignUp()">
+                Sign up
+                <span class="material-icons-outlined">chevron_right</span>
+
+            </a>
 
         <div class="signup" id="signup">
             <div class="signup-section">
                 <h2>Sign up</h2>
+                <div class="fields">
                 <label for="username">Email</label>
                 <input type="text" id="signup-email">
     
@@ -89,8 +112,14 @@
     
                 <label for="confirm-password">Confirm Password</label>
                 <input type="password" id="confirm-password">
+            </div>
     
                 <button onclick="window.location.href='../HomePage/index.html'">Sign Up</button>
+
+                <a class="go-back" onclick="window.location.href='../HomePageBeforeLogIn/index.html'">
+                    <span class="material-icons-outlined">chevron_left</span>
+                    Go Back
+                </a>
         </div>
         </div>
 
