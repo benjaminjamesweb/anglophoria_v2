@@ -52,12 +52,116 @@
 
     <!-- Side menu -->
     <div id="side-menu" class="side-menu">
-        <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
-        <a href="../HomePage/index.html">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <div class="links">
+            <div class="title-section">
+                <img src="../Images/anglophoria.png" alt="">
+                <h2>Hello, John!</h2>
+            </div>
+            <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
+            <a href="../HomePage/index.html">Home</a>
+
+
+            <a href="javascript:void(0)" onclick="toggleMyAccount()">Your Account</a>
+
+            <div class="my-account" id="my-account">
+                <div class="my-account-section">
+                    <div class="fields">
+                        <label for="nickname">Nickname: </label>
+                        <input type="text" id="nickname" value="John" readonly>
+            
+                        <label for="email">Email: </label>
+                        <input type="text" id="email" value="johndoe@shaw.ca" readonly>
+            
+                        <label for="account-type">Account type: </label>
+                        <select id="account-type" disabled>
+                            <option value="free">Free</option>
+                            <option value="premium" selected>Premium</option>
+                        </select>
+            
+                        <label for="first-language">First Language: </label>
+                        <select id="first-language" disabled>
+                            <option value="french" selected>French</option>
+                            <option value="german">German</option>
+                            <option value="italian">Italian</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="portuguese">Portuguese</option>
+                        </select>
+            
+                        <div class="payments-section">
+                            <input type="checkbox" id="payments" disabled>
+                            <label for="payments">I authorize monthly payments</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="buttons-div">
+                    <button id="editBtn" onClick="editAccount()">Edit</button>
+                    <button id="saveBtn" onClick="saveChanges()" style="display: none;">Save changes</button>
+                    <button id="cancelBtn" onClick="cancelChanges()" style="display: none;">Cancel changes</button>
+                </div>
+            </div>
+            
+
+            <a href="javascript:void(0)" onclick="toggleContact()">Contact</a>
+            <div class="contact" id="contact">
+                <div class="contact-section">
+                    <div class="header">                <h2 class="contact-us-header">Write to us!</h2></div>
+                
+                    <div class="fields">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" required>
+    
+                <label for="query">Your query</label>
+                <textarea id="query" required></textarea>
+            </div>
+                <button onClick="submitQuery()">Submit query</button>
+            </div>
+            <div class="submitted-query" style="display: none;">
+                <h2>Your query has been submitted!</h2>
+                <p>Thank you for writing to us!</p>
+                <p>We will respond within one year.</p>
+                <button onClick="resetContact()">Make a new query?</button>
+            </div>
+            </div>
+
+            <a href="javascript:void(0)" onclick="toggleParameters()">Parameters</a>
+
+            <div class="parameters" id="parameters">
+                    <div id="levelsContainer" class="box-container">
+                        <p>Target Proficiency Level: </p>
+                        <div id="levelsOptions" class="levels">
+                            <div class="level-box" data-value="a1">A1</div>
+                            <div class="level-box" data-value="a2">A2</div>
+                            <div class="level-box" data-value="b1">B1</div>
+                            <div class="level-box" data-value="b2">B2</div>
+                            <div class="level-box" data-value="c1">C1</div>
+                            <div class="level-box" data-value="c2">C2</div>
+                        </div>
+                    </div>
+                
+                    <div id="categoriesContainer" class="box-container">
+                        <p>View Categories:</p>
+                        <div class="categoriesOptions">
+                            <div class="category-box" data-value="grammar">Grammar</div>
+                            <div class="category-box" data-value="vocabulary">Vocabulary</div>
+                            <div class="category-box" data-value="listening">Listening</div>
+                            <div class="category-box" data-value="spelling">Spelling</div>
+                            <div class="category-box" data-value="writing">Writing</div>
+                            <div class="category-box" data-value="speed">Speed</div>
+                        </div>
+                    </div>
+            </div>
+
+
+            <a href="javascript:void(0)" onclick="toggleLogout()">Log out</a>
+            <div class="logout" id="logout">
+                <div class="logout-section">
+                <h2>Are you sure you want to log out?</h2>
+                <button onclick="window.location.href='../HomePageBeforeLogIn/index.html'">Yes, log out!</button>
+            </div>
+        </div>
     </div>
+</div>
 
     <div class="game-display" id="game-display">
         <div class="main-content">

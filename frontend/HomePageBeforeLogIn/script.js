@@ -87,7 +87,9 @@ document.querySelectorAll('.game-tile').forEach(tile => {
                       <option value="c2">C2</option>
                   </select>
                   </div>
-                <button class="playButton" onclick="window.location.href='../DiceOrDie/index.html'">Demo Game</button>
+                  <div class="button-div"> 
+                  <p>Log in to play! Or, play a demo: </p>
+                <button class="playButton" onclick="window.location.href='../DiceOrDieDemo/index.html'">Demo Game</button></div>
               `;
               detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
           }

@@ -2,11 +2,21 @@
 
 function toggleMenu() {
   var menu = document.getElementById("side-menu");
+  var gameDetails = document.getElementById("game-details");
+  var mainContent = document.querySelector(".main-content");
+
   if (menu.style.width === "250px") {
-    hideAllSections();
+      hideAllSections();
       menu.style.width = "0";
   } else {
       menu.style.width = "250px";
+      menu.style.zIndex = 10; // Ensure side menu is on top
+      mainContent.style.zIndex = 5; // Ensure main content is behind
+  }
+
+  // If game details are open, ensure they're on top
+  if (gameDetails.style.display === 'flex') {
+      gameDetails.style.zIndex = 20;
   }
 }
 
@@ -61,43 +71,84 @@ function hideAllSections() {
 }
 
 function showSection(sectionId) {
-  hideAllSections(); // Ensure all sections are hidden before showing the new one
+  const section = document.getElementById(sectionId);
 
-  var sectionDiv = document.getElementById(sectionId);
-  sectionDiv.style.display = 'block';
+  if (section) {
+      hideAllSections(); // Ensure all other sections are hidden
+      section.style.display = 'block'; // Show the requested section
 
-  // Adjust the position of the section
-  var links = document.querySelector('.links');
-  var linkElement = links.querySelector(`a[onclick="toggle${capitalizeFirstLetter(sectionId)}()"]`);
-
-  sectionDiv.style.top = linkElement.offsetTop + 'px';
+      // Optional: Scroll to the section smoothly
+      if (section.offsetTop) {
+          window.scrollTo({
+              top: section.offsetTop,
+              behavior: 'smooth'
+          });
+      }
+  } else {
+      console.error(`No element found with ID: ${sectionId}`);
+  }
 }
+
 
 function toggleParameters() {
-  if (document.getElementById('parameters').style.display === 'block') {
+  const sideMenu = document.querySelector('.side-menu');
+  const parametersSection = document.getElementById('parameters');
+  
+  if (parametersSection.style.display === 'block') {
       hideAllSections();
+      sideMenu.style.width = '250px'; // Reset to original width
   } else {
       showSection('parameters');
+      sideMenu.style.width = '600px'; // Set the width to 500px
   }
 }
+
 
 function toggleLogout() {
-  if (document.getElementById('logout').style.display === 'block') {
+  const sideMenu = document.querySelector('.side-menu');
+  const logoutSection = document.getElementById('logout');
+  
+  if (logoutSection.style.display === 'block') {
       hideAllSections();
+      sideMenu.style.width = '250px'; // Reset to original width
   } else {
       showSection('logout');
+      sideMenu.style.width = '350px'; // Set the width to 350px
   }
 }
 
+
 function toggleContact() {
-  if (document.getElementById('contact').style.display === 'block') {
-      hideAllSections();
+  const sideMenu = document.querySelector('.side-menu');
+  const contactSection = document.getElementById('contact');
+  
+  if (contactSection.style.display === 'block') {
+      // Hide the contact section and reset the side menu width
+      contactSection.style.display = 'none';
+      sideMenu.style.width = '250px'; // Reset to original width
   } else {
       // Reset the contact section to its initial state
       resetContactForm();
       showSection('contact');
+      sideMenu.style.width = '500px'; // Set the width to 500px
   }
 }
+
+function resetContact() {
+  // Hide the submitted query message
+  var submittedQuery = document.querySelector('.submitted-query');
+  submittedQuery.style.display = 'none';
+
+  // Show the contact section (the form)
+  var contactSection = document.querySelector('.contact-section');
+  contactSection.style.display = 'flex';
+
+  // Optionally, you can clear the form fields if desired
+  document.getElementById('subject').value = '';
+  document.getElementById('query').value = '';
+}
+
+
 
 function resetContactForm() {
   // Show the contact section
@@ -114,12 +165,23 @@ function resetContactForm() {
 }
 
 function toggleMyAccount() {
-  if (document.getElementById('my-account').style.display === 'block') {
-      hideAllSections();
+  const sideMenu = document.querySelector('.side-menu');
+  const myAccountSection = document.getElementById('my-account');
+  
+  if (myAccountSection) {
+      if (myAccountSection.style.display === 'block') {
+          myAccountSection.style.display = 'none';
+          sideMenu.style.width = '250'; // Reset to original width
+      } else {
+          showSection('my-account');
+          sideMenu.style.width = '560px'; // Set the width to 500px
+      }
   } else {
-      showSection('my-account');
+      console.error('My Account section not found in the DOM.');
   }
 }
+
+
 
 function toggleSignUp() {
   if (document.getElementById('signup').style.display === 'block') {
@@ -134,11 +196,19 @@ function capitalizeFirstLetter(string) {
 }
 
 
+
 function editAccount() {
   // Enable editing
+  document.getElementById('nickname').removeAttribute('readonly');
   document.getElementById('email').removeAttribute('readonly');
   document.getElementById('account-type').removeAttribute('disabled');
+  document.getElementById('first-language').removeAttribute('disabled');
   document.getElementById('payments').removeAttribute('disabled');
+
+  document.getElementById('email').style.backgroundColor = 'rgb(240, 240, 240)';
+  document.getElementById('email').style.color = 'rgb(0, 0, 0)';
+  document.getElementById('nickname').style.backgroundColor = 'rgb(240, 240, 240)';
+  document.getElementById('nickname').style.color = 'rgb(0, 0, 0)';
 
   // Show save and cancel buttons
   document.getElementById('saveBtn').style.display = 'inline-block';
@@ -147,6 +217,7 @@ function editAccount() {
   // Hide edit button
   document.getElementById('editBtn').style.display = 'none';
 }
+
 
 function saveChanges() {
   // Save changes logic here (e.g., send data to the server)
@@ -165,6 +236,14 @@ function resetAccountView() {
   document.getElementById('email').setAttribute('readonly', true);
   document.getElementById('account-type').setAttribute('disabled', true);
   document.getElementById('payments').setAttribute('disabled', true);
+  document.getElementById('first-language').setAttribute('disabled', true);
+  document.getElementById('nickname').setAttribute('readonly', true);
+
+  document.getElementById('email').style.backgroundColor = 'rgb(173, 173, 173)';
+  document.getElementById('email').style.color = '#353535';
+  document.getElementById('nickname').style.backgroundColor = 'rgb(173, 173, 173)';
+  document.getElementById('nickname').style.color = '#353535';
+
 
   // Show edit button
   document.getElementById('editBtn').style.display = 'inline-block';
@@ -183,3 +262,36 @@ function submitQuery() {
   var submittedQuery = document.querySelector('.submitted-query');
   submittedQuery.style.display = 'block';
 }
+
+
+document.querySelectorAll('.level-box').forEach(function(box) {
+  box.addEventListener('click', function() {
+      // Remove the selected class from all boxes
+      document.querySelectorAll('.level-box').forEach(function(box) {
+          box.classList.remove('selected');
+      });
+
+      // Add the selected class to the clicked box
+      this.classList.add('selected');
+
+      // Optionally, update a hidden input field or perform an action
+      const selectedLevel = this.getAttribute('data-value');
+      console.log('Selected level:', selectedLevel);
+      // You can use this value in a form submission or other logic
+  });
+});
+
+
+document.querySelectorAll('.category-box').forEach(function(box) {
+  box.addEventListener('click', function() {
+      // Toggle the selected class on the clicked box
+      this.classList.toggle('selected');
+
+      // Get selected categories
+      const selectedCategories = Array.from(document.querySelectorAll('.category-box.selected'))
+          .map(box => box.getAttribute('data-value'));
+
+      console.log('Selected categories:', selectedCategories);
+      // You can use this array in form submission or other logic
+  });
+});

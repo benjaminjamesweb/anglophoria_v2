@@ -56,91 +56,102 @@
     <!-- Side menu -->
     <div id="side-menu" class="side-menu">
         <div class="links">
+            <div class="title-section">
+                <img src="../Images/anglophoria.png" alt="">
+                <h2>Hello, John!</h2>
+            </div>
             <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
-            <a href="../HomePage/index.html">Home</a>
+            <a onclick="toggleMenu()">Home</a>
 
-            <a href="javascript:void(0)" onclick="toggleMyAccount()">My Account</a>
+            <a href="javascript:void(0)" onclick="toggleMyAccount()">Your Account</a>
 
             <div class="my-account" id="my-account">
                 <div class="my-account-section">
-                    <h2>My Account</h2>
+                    <div class="fields">
+                        <label for="nickname">Nickname: </label>
+                        <input type="text" id="nickname" value="John" readonly>
             
-                    <label for="email">Email: </label>
-                    <input type="text" id="email" value="someguy@gmail.com" readonly>
+                        <label for="email">Email: </label>
+                        <input type="text" id="email" value="johndoe@shaw.ca" readonly>
             
-                    <label for="account-type">Account type: </label>
-                    <select id="account-type" disabled>
-                        <option value="free">Free</option>
-                        <option value="premium" selected>Premium</option>
-                    </select>
+                        <label for="account-type">Account type: </label>
+                        <select id="account-type" disabled>
+                            <option value="free">Free</option>
+                            <option value="premium" selected>Premium</option>
+                        </select>
             
-                    <label for="payments">Monthly payments</label>
-                    <div class="payments-section">
-                        <label for="payments">Authorized</label>
-                    <input type="checkbox" id="payments" disabled>
+                        <label for="first-language">First Language: </label>
+                        <select id="first-language" disabled>
+                            <option value="french" selected>French</option>
+                            <option value="german">German</option>
+                            <option value="italian">Italian</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="portuguese">Portuguese</option>
+                        </select>
+            
+                        <div class="payments-section">
+                            <input type="checkbox" id="payments" disabled>
+                            <label for="payments">I authorize monthly payments</label>
+                        </div>
+                    </div>
                 </div>
-        
+                
+                <div class="buttons-div">
+                    <button id="editBtn" onClick="editAccount()">Edit</button>
+                    <button id="saveBtn" onClick="saveChanges()" style="display: none;">Save changes</button>
+                    <button id="cancelBtn" onClick="cancelChanges()" style="display: none;">Cancel changes</button>
                 </div>
-            
-                <button id="editBtn" onClick="editAccount()">Edit</button>
-                <button id="saveBtn" onClick="saveChanges()" style="display: none;">Save changes</button>
-                <button id="cancelBtn" onClick="cancelChanges()" style="display: none;">Cancel changes</button>
             </div>
+            
 
             <a href="javascript:void(0)" onclick="toggleContact()">Contact</a>
             <div class="contact" id="contact">
                 <div class="contact-section">
-                <h2 class="contact-us-header">Contact Us</h2>
+                    <div class="header">                <h2 class="contact-us-header">Write to us!</h2></div>
+                
+                    <div class="fields">
                 <label for="subject">Subject</label>
-                <input type="text" id="subject">
+                <input type="text" id="subject" required>
     
                 <label for="query">Your query</label>
-                <textarea id="query"></textarea>
+                <textarea id="query" required></textarea>
+            </div>
                 <button onClick="submitQuery()">Submit query</button>
             </div>
             <div class="submitted-query" style="display: none;">
-                <p>Thank you for your query.</p>
+                <h2>Your query has been submitted!</h2>
+                <p>Thank you for writing to us!</p>
                 <p>We will respond within one year.</p>
+                <button onClick="resetContact()">Make a new query?</button>
             </div>
             </div>
 
             <a href="javascript:void(0)" onclick="toggleParameters()">Parameters</a>
 
             <div class="parameters" id="parameters">
-                <div id="levelsContainer" class="box-container">
-                    <p>Levels</p>
-                    <div id="levelsOptions">
-                        <input type="radio" id="a1" name="level" class="box" value="a1" checked>
-                        <label for="a1" class="label-box">A1</label>
-                        <input type="radio" id="a2" name="level" class="box" value="a2">
-                        <label for="a2" class="label-box">A2</label>
-                        <input type="radio" id="b1" name="level" class="box" value="b1">
-                        <label for="b1" class="label-box">B1</label>
-                        <input type="radio" id="b2" name="level" class="box" value="b2">
-                        <label for="b2" class="label-box">B2</label>
-                        <input type="radio" id="c1" name="level" class="box" value="c1">
-                        <label for="c1" class="label-box">C1</label>
-                        <input type="radio" id="c2" name="level" class="box" value="c2">
-                        <label for="c2" class="label-box">C2</label>
-                    </div>
-                </div>
-                <div id="categoriesContainer" class="box-container">
-                    <p>Categories</p>
-                    <div class="categoriesOptions">
-                        <div class="checkboxContainer">
-                            <input type="checkbox" id="pastTense" name="category" class="box" value="past tense" checked>
-                            <label for="pastTense" class="label-box">Grammar</label>
-                        </div>
-                        <div class="checkboxContainer">
-                            <input type="checkbox" id="presentTense" name="category" class="box" value="present tense" checked>
-                            <label for="presentTense" class="label-box">Vocabulary</label>
-                        </div>
-                        <div class="checkboxContainer">
-                            <input type="checkbox" id="futureTense" name="category" class="box" value="future tense" checked>
-                            <label for="futureTense" class="label-box">Listening</label>
+                    <div id="levelsContainer" class="box-container">
+                        <p>Target Proficiency Level: </p>
+                        <div id="levelsOptions" class="levels">
+                            <div class="level-box" data-value="a1">A1</div>
+                            <div class="level-box" data-value="a2">A2</div>
+                            <div class="level-box" data-value="b1">B1</div>
+                            <div class="level-box" data-value="b2">B2</div>
+                            <div class="level-box" data-value="c1">C1</div>
+                            <div class="level-box" data-value="c2">C2</div>
                         </div>
                     </div>
-                </div>
+                
+                    <div id="categoriesContainer" class="box-container">
+                        <p>View Categories:</p>
+                        <div class="categoriesOptions">
+                            <div class="category-box" data-value="grammar">Grammar</div>
+                            <div class="category-box" data-value="vocabulary">Vocabulary</div>
+                            <div class="category-box" data-value="listening">Listening</div>
+                            <div class="category-box" data-value="spelling">Spelling</div>
+                            <div class="category-box" data-value="writing">Writing</div>
+                            <div class="category-box" data-value="speed">Speed</div>
+                        </div>
+                    </div>
             </div>
 
 
@@ -148,14 +159,13 @@
             <div class="logout" id="logout">
                 <div class="logout-section">
                 <h2>Are you sure you want to log out?</h2>
-                <button onclick="window.location.href='../HomePageBeforeLogIn/index.html'">Log out</button>
+                <button onclick="window.location.href='../HomePageBeforeLogIn/index.html'">Yes, log out!</button>
             </div>
             </div>
-
-
-       
-
+        </div>
+        </div>
     </div>
+
 
 
     <div class="main-content">
