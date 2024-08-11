@@ -142,17 +142,16 @@ footer {
 
 .side-menu {
     height: 100%;
-    width: 300px;
+    width: 0;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #292929;
+    background-color: #111;
     overflow-x: hidden;
+    overflow-y: auto;
     transition: 0.5s;
     padding-top: 60px;
-    display: flex;
-    flex-direction: column;
-    z-index: 9999; /* Set a very high z-index */
+    z-index: 10; /* Ensure it stays on top of the .main-content */
 }
 
 .side-menu .links a {
@@ -313,6 +312,7 @@ footer {
     background-color: #1aff00;
     transition: color 0.3s ease, font-size 0.3s ease;
 }
+
 
 .welcome-section {
     margin: 10px;
@@ -914,3 +914,34 @@ font-size: 24px;
     color: white;
     border-color: #000000;
 }
+
+.pre-game-display a {
+    display: flex;
+    align-items: center;
+    z-index: 20;
+    position: absolute;
+    top: 150%; /* 90% from the top */
+    left: 50%; /* 50% from the left */
+    transform: translate(-50%, -50%); /* Center both horizontally and slightly vertically */
+    padding: 8px;
+    border-radius: 8px;
+    
+}
+
+
+.pre-game-display a:hover {
+    background-color: #292929;
+    font-size: 40px;
+    transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+
+.payments-section {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+ }
+
+ .payments-section label{
+    margin-top: 8px;
+ }
