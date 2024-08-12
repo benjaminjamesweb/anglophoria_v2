@@ -198,20 +198,48 @@ footer {
     margin-top: -15px;
 }
 
+#accentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -15px;
+}
+
+#accentContainer p {
+    margin-bottom: -20px;
+}
+
+#accentContainer .accents {
+    display: flex;
+    gap: 0px;
+    margin-top: 8px;
+    padding: 10px;
+}
+
+#attainedLevelsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -15px;
+}
+
 
 #levelsContainer p {
     margin-bottom: 0px; /* Kept the same since it's already minimal */ /* Reduced by 20% */
 }
 
-.levels {
+.levels, .attainedLevels{
     display: flex;
     gap: 0px;
     margin-top: 8px; /* Reduced from 10px */
 }
 
-.level-box {
+.level-box, .attainedlevel-box, .accent-box {
     border: 2.4px solid black; /* Reduced from 3px */
-    padding: 6px; /* Reduced from 8px */
+    padding: 10px 20px 10px 20px;
+     /* Reduced from 8px */
     background-color: rgb(103, 103, 103);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
@@ -222,7 +250,12 @@ footer {
     font-size: 80%; /* Reduced by 20% */
 }
 
-.level-box:hover {
+.accent-box {
+    margin: 3px;
+}
+
+
+#levelsContainer .level-box:hover {
     background-color: rgb(174, 0, 255);
     transform: scale(1.05);
 }
@@ -282,7 +315,7 @@ footer {
     width: 900px;
     padding: 20px;
     text-align: center;
-    background: linear-gradient(135deg, #0b0b0b, #5f5f5f);
+    background: rgb(41, 41, 41);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -310,9 +343,60 @@ footer {
     height: 80px;
     cursor: pointer;
     transition: transform 0.3s;
-    background-color: rgb(233, 123, 255);
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
     margin: 0px;
 }
+
+.game-tile-1 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-7 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-8 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-20 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-30 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-2 img {
+    background-color: rgb(0, 60, 255);
+}
+
+.game-tile-3 img {
+    background-color: rgb(0, 60, 255);
+}
+
+.game-tile-9 img {
+    background-color: rgb(0, 60, 255);
+}
+
+.game-tile-21 img {
+    background-color: rgb(0, 60, 255);
+}
+
+.game-tile-25 img {
+    background-color: rgb(255, 0, 212);
+}
+
+.game-tile-5 img {
+    background-color: rgb(255, 0, 212);
+}
+
+.game-tile-10 img {
+    background-color: rgb(255, 0, 212);
+}
+
+
 
 
 .game-tile:hover img {
@@ -709,4 +793,38 @@ font-size: 24px;
 
 .main-content {
     z-index: 5; /* Ensure it stays behind */
+}
+
+
+.legend-div {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.legend-div .legend {
+    background-color: #333333;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.legend-div .legend-title{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+
+.games-title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    font-size: 25px;
 }

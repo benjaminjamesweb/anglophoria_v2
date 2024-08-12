@@ -166,32 +166,29 @@
 
             <a href="javascript:void(0)" onclick="toggleParameters()">Parameters</a>
 
-            <div class="parameters" id="parameters">
-                    <div id="levelsContainer" class="box-container">
-                        <p>Target Proficiency Level: </p>
-                        <div id="levelsOptions" class="levels">
-                            <div class="level-box" data-value="a1">A1</div>
-                            <div class="level-box" data-value="a2">A2</div>
-                            <div class="level-box" data-value="b1">B1</div>
-                            <div class="level-box" data-value="b2">B2</div>
-                            <div class="level-box" data-value="c1">C1</div>
-                            <div class="level-box" data-value="c2">C2</div>
-                        </div>
-                    </div>
-                
-                    <div id="categoriesContainer" class="box-container">
-                        <p>View Categories:</p>
-                        <div class="categoriesOptions">
-                            <div class="category-box" data-value="grammar">Grammar</div>
-                            <div class="category-box" data-value="vocabulary">Vocabulary</div>
-                            <div class="category-box" data-value="listening">Listening</div>
-                            <div class="category-box" data-value="spelling">Spelling</div>
-                            <div class="category-box" data-value="writing">Writing</div>
-                            <div class="category-box" data-value="speed">Speed</div>
-                        </div>
-                    </div>
-            </div>
+<div class="parameters" id="parameters">
+    <div id="accentContainer" class="box-container">
+        <p>Default Accent: </p>
+        <div id="accentOptions" class="accents">
+            <div class="accent-box" data-value="american">American</div>
+            <div class="accent-box" data-value="british">British</div>
+            <div class="accent-box" data-value="australian">Australian</div>
+            <div class="accent-box" data-value="esl">ESL</div>
+        </div>
+    </div>
 
+    <div id="categoriesContainer" class="box-container">
+        <p>Game Categories:</p>
+        <div class="categoriesOptions">
+            <div class="category-box" data-value="grammar">Grammar</div>
+            <div class="category-box" data-value="vocabulary">Vocabulary</div>
+            <div class="category-box" data-value="listening">Listening</div>
+            <div class="category-box" data-value="spelling">Spelling</div>
+            <div class="category-box" data-value="writing">Writing</div>
+            <div class="category-box" data-value="speed">Speed</div>
+        </div>
+    </div>
+</div>
 
             <a href="javascript:void(0)" onclick="toggleLogout()">Log out</a>
             <div class="logout" id="logout">
@@ -205,140 +202,157 @@
     </div>
 
 
-
+    <p class="games-title">Let's play!</p>
     <div class="main-content">
         <div class="games-flex">
 
-            <a href="#" class="game-tile" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
+            <a href="#" class="game-tile game-tile-1" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
                 <div class="game-info">Dice or Die</div>
                 <img src="Images/apple.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
+            <a href="#" class="game-tile game-tile-2" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
                 <div class="game-info">Let Us Eat Lettuce</div>
                 <img src="Images/lettuce.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
+            <a href="#" class="game-tile game-tile-3" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
                 <div class="game-info">Grapes of Wrath</div>
                 <img src="Images/grapes.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
+            <a href="#" class="game-tile game-tile-4" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
                 <div class="game-info">Merry Halloween</div>
                 <img src="Images/pumpkin.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
+            <a href="#" class="game-tile game-tile-5" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
                 <div class="game-info">Dice or Die</div>
                 <img src="Images/apple.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
+            <a href="#" class="game-tile game-tile-6" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
                 <div class="game-info">Let Us Eat Lettuce</div>
                 <img src="Images/lettuce.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
+            <a href="#" class="game-tile game-tile-7" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
                 <div class="game-info">Grapes of Wrath</div>
                 <img src="Images/grapes.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
+            <a href="#" class="game-tile game-tile-7.5" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
                 <div class="game-info">Merry Halloween</div>
                 <img src="Images/pumpkin.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
+            <a href="#" class="game-tile game-tile-8" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
                 <div class="game-info">Dice or Die</div>
                 <img src="Images/apple.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
+            <a href="#" class="game-tile game-tile-9" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
                 <div class="game-info">Let Us Eat Lettuce</div>
                 <img src="Images/lettuce.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
+            <a href="#" class="game-tile game-tile-10" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
                 <div class="game-info">Grapes of Wrath</div>
                 <img src="Images/grapes.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
+            <a href="#" class="game-tile game-tile-11" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
                 <div class="game-info">Merry Halloween</div>
                 <img src="Images/pumpkin.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
+            <a href="#" class="game-tile game-tile-12" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
                 <div class="game-info">Dice or Die</div>
                 <img src="Images/apple.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
+            <a href="#" class="game-tile game-tile-13" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
                 <div class="game-info">Let Us Eat Lettuce</div>
                 <img src="Images/lettuce.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
+            <a href="#" class="game-tile game-tile-14" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
                 <div class="game-info">Grapes of Wrath</div>
                 <img src="Images/grapes.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
+            <a href="#" class="game-tile game-tile-15" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
                 <div class="game-info">Merry Halloween</div>
                 <img src="Images/pumpkin.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
+            <a href="#" class="game-tile game-tile-16" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
                 <div class="game-info">Dice or Die</div>
                 <img src="Images/apple.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
+            <a href="#" class="game-tile game-tile-17" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
                 <div class="game-info">Let Us Eat Lettuce</div>
                 <img src="Images/lettuce.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
+            <a href="#" class="game-tile game-tile-18" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
                 <div class="game-info">Grapes of Wrath</div>
                 <img src="Images/grapes.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
+            <a href="#" class="game-tile game-tile-19" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
                 <div class="game-info">Merry Halloween</div>
                 <img src="Images/pumpkin.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
+            <a href="#" class="game-tile game-tile-20" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
                 <div class="game-info">Dice or Die</div>
                 <img src="Images/apple.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
+            <a href="#" class="game-tile game-tile-21" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
                 <div class="game-info">Let Us Eat Lettuce</div>
                 <img src="Images/lettuce.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
+            <a href="#" class="game-tile game-tile-22" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
                 <div class="game-info">Grapes of Wrath</div>
                 <img src="Images/grapes.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
+            <a href="#" class="game-tile game-tile-23" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
                 <div class="game-info">Merry Halloween</div>
                 <img src="Images/pumpkin.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
+            <a href="#" class="game-tile game-tile-24" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
                 <div class="game-info">Dice or Die</div>
                 <img src="Images/apple.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
+            <a href="#" class="game-tile game-tile-25" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
                 <div class="game-info">Let Us Eat Lettuce</div>
                 <img src="Images/lettuce.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
+            <a href="#" class="game-tile game-tile-26" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
                 <div class="game-info">Grapes of Wrath</div>
                 <img src="Images/grapes.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
+            <a href="#" class="game-tile game-tile-27" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
                 <div class="game-info">Merry Halloween</div>
                 <img src="Images/pumpkin.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
+            <a href="#" class="game-tile game-tile-28" data-title="Dice or Die" data-img="Images/apple.png" data-header="Test your speed in the kitchen!" data-description="<p>This game will train you to react quickly to fruits and vegetable vocabulary.</p><p>This is the ideal mini-game for kitchen workers.</p>">
                 <div class="game-info">Dice or Die</div>
                 <img src="Images/apple.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
+            <a href="#" class="game-tile game-tile-29" data-title="Let Us Eat Lettuce" data-img="Images/lettuce.png" data-header="Test your listening skills!" data-description="<p>This game will train you to tell the difference between similar-sounding words.</p><p>Ideal for training for real-life conversations and understanding puns.</p>">
                 <div class="game-info">Let Us Eat Lettuce</div>
                 <img src="Images/lettuce.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
+            <a href="#" class="game-tile game-tile-30" data-title="Grapes of Wrath" data-img="Images/grapes.png" data-header="Can you stand the wrath?" data-description="<p>This game will train you play a random game with grapes.</p><p>You will learn a few words in the process.</p>">
                 <div class="game-info">Grapes of Wrath</div>
                 <img src="Images/grapes.png" alt="Game 1">
             </a>
-            <a href="#" class="game-tile" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
+            <a href="#" class="game-tile game-tile-31" data-title="Merry Halloween" data-img="Images/pumpkin.png" data-header="Do you know what season it is?" data-description="<p>Train yourself to react quickly to holidays and seasons.</p><p>You will be able to speak about Halloween, Christmas, Easter, etc.</p>">
                 <div class="game-info">Merry Halloween</div>
                 <img src="Images/pumpkin.png" alt="Game 1">
             </a>
         </div>
     </div>
+    <div class="legend-div">
+        <p class="legend-title">Attained levels</p>
+        <div class="legend">
+            <div id="attainedLevelsContainer" class="box-container">
+                
+                <div id="attainedLevelsOptions" class="attainedLevels">
+                    <div class="attainedlevel-box" data-value="a1" style="background-color: rgb(255, 0, 212);">A1</div>
+                    <div class="attainedlevel-box" data-value="a2" style="background-color: rgb(0, 60, 255);">A2</div>
+                    <div class="attainedlevel-box" data-value="b1" style="background-color: rgb(94, 255, 0);">B1</div>
+                    <div class="attainedlevel-box" data-value="b2" style="background-color: rgb(255, 255, 0);">B2</div>
+                    <div class="attainedlevel-box" data-value="c1" style="background-color: rgb(255, 165, 0);">C1</div>
+                    <div class="attainedlevel-box" data-value="c2" style="background-color: rgb(255, 69, 0);">C2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <div id="game-details" class="game-details">
         <a href="javascript:void(0)" class="close-btn" onclick="closeGameDetails()">×</a>

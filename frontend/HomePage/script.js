@@ -20,6 +20,15 @@ function toggleMenu() {
   }
 }
 
+function closeGameDetails() {
+  const detailsSection = document.getElementById('game-details');
+  detailsSection.style.display = 'none';
+}
+
+
+// Ensure levelsContainer is created only once
+let levelsContainerExists = false;
+
 document.querySelectorAll('.game-tile').forEach(tile => {
   tile.addEventListener('click', function(event) {
       event.preventDefault();
@@ -30,37 +39,76 @@ document.querySelectorAll('.game-tile').forEach(tile => {
       const level = this.dataset.header;
       const category = this.dataset.description;
 
-      if (detailsSection.style.display === 'flex' &&
-          document.getElementById('game-title').textContent === title) {
-          detailsSection.style.display = 'none';
-      } else {
-          document.getElementById('game-title').textContent = title;
-          document.getElementById('game-image').src = imgSrc;
-          document.getElementById('game-level').textContent = level;
-          document.getElementById('game-category').innerHTML = category;
+      if (detailsSection.style.display === 'flex' && document.getElementById('game-title').textContent === title) {
+        closeGameDetails(); // Close the details section if the same game tile is clicked twice
+    } else {
+      // Update the game details section
+      document.getElementById('game-title').textContent = title;
+      document.getElementById('game-image').src = imgSrc;
+      document.getElementById('game-level').textContent = level;
+      document.getElementById('game-category').innerHTML = category;
 
-          if (!document.getElementById('levelsDropdown')) {
-              const newContent = `
-              <div class="confirm-level">
-              <p> Confirm your level: </p>
-                  <select id="levelsDropdown">
-                      <option value="a1" selected>A1</option>
-                      <option value="a2">A2</option>
-                      <option value="b1">B1</option>
-                      <option value="b2">B2</option>
-                      <option value="c1">C1</option>
-                      <option value="c2">C2</option>
-                  </select>
-                  </div>
-                <button class="playButton" onclick="window.location.href='../DiceOrDie/index.html'">Play</button>
+      // Check if levelsContainer already exists
+      if (!levelsContainerExists) {
+          // If it doesn't exist, create it
+          const newContent = `
+                 <div id="levelsContainer" class="box-container" style="margin-top: 30px;">
+                    <p>Choose a level: </p>
+                    <div id="levelsOptions" class="levels">
+                        <div class="level-box level-box-a1" data-value="a1" data-color="rgb(255, 0, 212)">A1</div>
+                        <div class="level-box level-box-a2" data-value="a2" data-color="rgb(0, 60, 255)">A2</div>
+                        <div class="level-box level-box-b1" data-value="b1" data-color="rgb(94, 255, 0)">B1</div>
+                        <div class="level-box level-box-b2" data-value="b2" data-color="rgb(255, 255, 0)">B2</div>
+                        <div class="level-box level-box-c1" data-value="c1" data-color="rgb(255, 165, 0)">C1</div>
+                        <div class="level-box level-box-c2" data-value="c2" data-color="rgb(255, 69, 0)">C2</div>
+                    </div>
+                <button class="playButton" onclick="window.location.href='../DiceOrDie/index.html'" style="margin-top: 30px;">Play</button>
               `;
-              detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
-          }
+          detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
 
-          detailsSection.style.display = 'flex';
+          // Add event listeners to the level boxes for click and hover effects
+          addLevelBoxEventListeners();
+          
+          // Mark levelsContainer as created
+          levelsContainerExists = true;
       }
-  });
+
+      detailsSection.style.display = 'flex';
+}});
 });
+
+function addLevelBoxEventListeners() {
+    document.querySelectorAll('.level-box').forEach(box => {
+        box.style.backgroundColor = 'gray'; // Set default background color to gray
+
+        box.addEventListener('click', function() {
+            // Reset all boxes to gray and remove the active class
+            document.querySelectorAll('.level-box').forEach(b => {
+                b.style.backgroundColor = 'gray';
+                b.classList.remove('active');
+            });
+
+            // Set the background color of the clicked box and mark it as active
+            this.style.backgroundColor = this.dataset.color;
+            this.classList.add('active');
+        });
+
+        // Add hover effect using data-color
+        box.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = this.dataset.color;
+        });
+
+        box.addEventListener('mouseleave', function() {
+            // Only reset to gray if the box is not the selected one
+            if (!this.classList.contains('active')) {
+                this.style.backgroundColor = 'gray';
+            }
+        });
+    });
+}
+
+
+
 
 function editPaymentInfo() {
   // Enable editing for payment info fields
@@ -357,3 +405,39 @@ document.querySelectorAll('.category-box').forEach(function(box) {
       // You can use this array in form submission or other logic
   });
 });
+
+
+function addAccentBoxEventListeners() {
+  document.querySelectorAll('.accent-box').forEach(box => {
+      box.style.backgroundColor = 'gray'; // Set default background color to gray
+
+      box.addEventListener('click', function() {
+          // Reset all boxes to gray and remove the active class
+          document.querySelectorAll('.accent-box').forEach(b => {
+              b.style.backgroundColor = 'gray';
+              b.classList.remove('active');
+          });
+
+          // Set the background color of the clicked box and mark it as active
+          this.style.backgroundColor = '#00f819';
+          this.classList.add('active');
+      });
+
+      // Add hover effect to turn the box purple
+      box.addEventListener('mouseenter', function() {
+          if (!this.classList.contains('active')) {
+              this.style.backgroundColor = 'rgb(174, 0, 255)';
+          }
+      });
+
+      box.addEventListener('mouseleave', function() {
+          // Only reset to gray if the box is not the selected one
+          if (!this.classList.contains('active')) {
+              this.style.backgroundColor = 'gray';
+          }
+      });
+  });
+}
+
+// Call this function to ensure the accent boxes in the parameters section work
+addAccentBoxEventListeners();

@@ -252,6 +252,7 @@ footer {
     cursor: pointer;
     transition: transform 0.3s;
     background-color: rgb(255, 255, 255);
+    border-radius: 5px;
     margin: 0px;
 }
 
