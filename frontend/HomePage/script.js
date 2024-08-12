@@ -62,6 +62,64 @@ document.querySelectorAll('.game-tile').forEach(tile => {
   });
 });
 
+function editPaymentInfo() {
+  // Enable editing for payment info fields
+  document.getElementById('credit-card-number').removeAttribute('readonly');
+  document.getElementById('expiry-date').removeAttribute('readonly');
+  document.getElementById('cvv').removeAttribute('readonly');
+  document.getElementById('payments').removeAttribute('disabled');
+
+  // Change background and text color to indicate editable fields
+  document.getElementById('credit-card-number').style.backgroundColor = 'rgb(240, 240, 240)';
+  document.getElementById('payment-info-section').style.backgroundColor = 'rgb(60, 60, 60)';
+  document.getElementById('buttons-div').style.backgroundColor = 'rgb(60, 60, 60)';
+  document.getElementById('credit-card-number').style.color = 'rgb(0, 0, 0)';
+  document.getElementById('expiry-date').style.backgroundColor = 'rgb(240, 240, 240)';
+  document.getElementById('expiry-date').style.color = 'rgb(0, 0, 0)';
+  document.getElementById('cvv').style.backgroundColor = 'rgb(240, 240, 240)';
+  document.getElementById('cvv').style.color = 'rgb(0, 0, 0)';
+
+  // Show save and cancel buttons, hide edit button
+  document.getElementById('editPaymentBtn').style.display = 'none';
+  document.getElementById('savePaymentBtn').style.display = 'inline-block';
+  document.getElementById('cancelPaymentBtn').style.display = 'inline-block';
+}
+
+function savePaymentInfo() {
+  // Save changes logic here (e.g., send data to the server)
+
+  // Reset to view-only mode
+  resetPaymentInfoView();
+}
+
+function cancelPaymentEdit() {
+  // Reset to view-only mode without saving
+  resetPaymentInfoView();
+}
+
+function resetPaymentInfoView() {
+  // Disable editing for payment info fields
+  document.getElementById('credit-card-number').setAttribute('readonly', true);
+  document.getElementById('expiry-date').setAttribute('readonly', true);
+  document.getElementById('cvv').setAttribute('readonly', true);
+  document.getElementById('payments').setAttribute('disabled', true);
+
+  // Revert background and text color
+  document.getElementById('credit-card-number').style.backgroundColor = 'rgb(173, 173, 173)';
+  document.getElementById('credit-card-number').style.color = '#353535';
+  document.getElementById('expiry-date').style.backgroundColor = 'rgb(173, 173, 173)';
+  document.getElementById('expiry-date').style.color = '#353535';
+  document.getElementById('cvv').style.backgroundColor = 'rgb(173, 173, 173)';
+  document.getElementById('cvv').style.color = '#353535';
+  document.getElementById('payment-info-section').style.backgroundColor = 'rgb(39, 39, 39)';
+  document.getElementById('buttons-div').style.backgroundColor = 'rgb(39, 39, 39)';
+
+  // Show edit button, hide save and cancel buttons
+  document.getElementById('editPaymentBtn').style.display = 'inline-block';
+  document.getElementById('savePaymentBtn').style.display = 'none';
+  document.getElementById('cancelPaymentBtn').style.display = 'none';
+}
+
 function hideAllSections() {
   // Hide all sections
   document.getElementById('parameters').style.display = 'none';
@@ -209,6 +267,8 @@ function editAccount() {
   document.getElementById('email').style.color = 'rgb(0, 0, 0)';
   document.getElementById('nickname').style.backgroundColor = 'rgb(240, 240, 240)';
   document.getElementById('nickname').style.color = 'rgb(0, 0, 0)';
+  document.getElementById('personal-info-section').style.backgroundColor = 'rgb(60, 60, 60)';
+  document.getElementById('personal-buttons-div').style.backgroundColor = 'rgb(60, 60, 60)';
 
   // Show save and cancel buttons
   document.getElementById('saveBtn').style.display = 'inline-block';
@@ -243,6 +303,8 @@ function resetAccountView() {
   document.getElementById('email').style.color = '#353535';
   document.getElementById('nickname').style.backgroundColor = 'rgb(173, 173, 173)';
   document.getElementById('nickname').style.color = '#353535';
+  document.getElementById('personal-info-section').style.backgroundColor = 'rgb(39, 39, 39)';
+  document.getElementById('personal-buttons-div').style.backgroundColor = 'rgb(39, 39, 39)';
 
 
   // Show edit button

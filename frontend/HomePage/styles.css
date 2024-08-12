@@ -314,6 +314,7 @@ footer {
     margin: 0px;
 }
 
+
 .game-tile:hover img {
     transform: scale(1.1);
     z-index: 1;
@@ -514,6 +515,22 @@ font-size: 24px;
     font-size: 18px;
     margin-left: 10px;
 }
+
+.horizontal-div {
+    display: flex;
+}
+
+.horizontal-div input {
+    width: 70px;
+}
+
+.horizontal-div .cvv {
+    margin-left: 200px;
+}
+
+.horizontal-div label{
+    margin-right: 10px;
+}
 .my-account-section .fields{
     margin-top: 20px;
 }
@@ -522,6 +539,16 @@ font-size: 24px;
    font-family: "Poetsen One", sans-serif;
 }
 
+.premium-description-div {
+    text-align: center;
+    background-color: #414141;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.premium-description {
+    margin: 30px;
+}
 .contact-section .header {
     margin-top: -20px;
     margin-bottom: -20px;
@@ -540,11 +567,11 @@ font-size: 24px;
  }
 
  .my-account-section .fields input:focus {
-    background-color: rgb(251, 0, 255) !important; /* Added !important to force the rule */
+    background-color: rgb(174, 0, 255) !important; /* Added !important to force the rule */
 }
 
 .my-account-section .fields select:focus {
-    background-color: rgb(251, 0, 255);
+    background-color: rgb(174, 0, 255) 
 }
 
 
@@ -559,15 +586,15 @@ font-size: 24px;
  }
 
  .contact-section .fields textarea:focus,  .contact-section .fields input:focus{
-    background-color: #be00f8;
+    background-color: rgb(174, 0, 255) 
  }
 
  .contact-section .fields textarea:valid,  .contact-section .fields input:valid{
-    background-color: #25ff25; /* Green when valid */
+    background-color: #ffffff; 
 }
 
 .contact-section .fields textarea:focus:valid,  .contact-section .fields input:focus:valid {
-    background-color: #be00f8; /* Purple while focused and valid */
+    background-color: rgb(174, 0, 255)  
 }
 
 .my-account-section .fields select{
@@ -583,12 +610,13 @@ font-size: 24px;
     min-width: 30%;
     border-radius: 8px;
     font-family: "Poetsen One", sans-serif;
-    background-color: rgb(0, 54, 0);
+    background-color: rgb(0, 117, 0);
  }
 
  .my-account .buttons-div{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 0px;
  }
  .my-account button:hover, .logout-section button:hover{
     font-size: 20px;
@@ -602,7 +630,7 @@ font-size: 24px;
     padding: 5px;
     border-radius: 8px;
     font-family: "Poetsen One", sans-serif;
-    background-color: rgb(0, 54, 0);
+    background-color: rgb(0, 100, 0);
  }
 
  .contact-section button:hover, .submitted-query button:hover{

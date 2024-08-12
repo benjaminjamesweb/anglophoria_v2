@@ -66,7 +66,8 @@
             <a href="javascript:void(0)" onclick="toggleMyAccount()">Your Account</a>
 
             <div class="my-account" id="my-account">
-                <div class="my-account-section">
+                <div class="my-account-section" id="personal-info-section">
+                    <h3>Personal Info</h3>
                     <div class="fields">
                         <label for="nickname">Nickname: </label>
                         <input type="text" id="nickname" value="John" readonly>
@@ -89,18 +90,55 @@
                             <option value="portuguese">Portuguese</option>
                         </select>
             
+                    </div>
+                </div>
+                
+                <div class="buttons-div" id="personal-buttons-div">
+                    <button id="editBtn" onClick="editAccount()">Edit</button>
+                    <button id="saveBtn" onClick="saveChanges()" style="display: none;">Save changes</button>
+                    <button id="cancelBtn" onClick="cancelChanges()" style="display: none;">Cancel changes</button>
+                </div>
+
+                <hr style="border-top: 1px solid white; margin: 20px 0;">
+
+                <div class="my-account-section payment-info" id="payment-info-section">
+                    <h3>Payment Info</h3>
+                    <div class="fields">
+                        <label for="credit-card-number">Credit card number: </label>
+                        <input type="text" id="credit-card-number" value="1450 **** **** **** ****" readonly>
+            
+                        <div class="horizontal-div">
+                        <label for="expiry-date">Expiry date: </label>
+                        <input type="text" id="expiry-date" value="MM/YY" readonly>
+
+                        <label class="cvv" for="cvv">CVV: </label>
+                        <input type="text" id="cvv" value="e.g. 555" readonly>
+                    </div>
+            
+                    <div class="premium-description-div">
+                        <div class="premium-description">
+                      <h3>Anglophoria Premium costs $4.99/month</h3>
+                      <p>Premium members get their first month free.</p>
+                      <p>Subsequent payments are charged on the first of the month.</p>
+                    </div>
+                    </div>
+            
                         <div class="payments-section">
                             <input type="checkbox" id="payments" disabled>
                             <label for="payments">I authorize monthly payments</label>
                         </div>
                     </div>
                 </div>
-                
-                <div class="buttons-div">
-                    <button id="editBtn" onClick="editAccount()">Edit</button>
-                    <button id="saveBtn" onClick="saveChanges()" style="display: none;">Save changes</button>
-                    <button id="cancelBtn" onClick="cancelChanges()" style="display: none;">Cancel changes</button>
+                <div class="buttons-div" id="buttons-div">
+                    <button id="editPaymentBtn" onClick="editPaymentInfo()">Edit</button>
+                    <button id="savePaymentBtn" onClick="savePaymentInfo()" style="display: none;">Save changes</button>
+                    <button id="cancelPaymentBtn" onClick="cancelPaymentEdit()" style="display: none;">Cancel changes</button>
                 </div>
+
+
+
+
+
             </div>
             
 
