@@ -14,9 +14,9 @@ document.getElementById('start-game-button').addEventListener('click', () => {
 });
 
 const ingredients = [
-    'apple', 'banana', 'carrot', 'grapes', 'lettuce', 'pineapple', 'orange', 
-    'pepper', 'pumpkin', 'strawberry', 'tomato', 'watermelon'
+    'pumpkin', 'pumpkin', 'pumpkin', 'pumpkin', 'pumpkin', 'pumpkin', 'pumpkin', 'pumpkin', 'pumpkin', 'pumpkin', 'pumpkin',
 ];
+
 
 const pointsPerTurn = 10;
 const pointsDeducted = 5;

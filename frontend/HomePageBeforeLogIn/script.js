@@ -130,14 +130,14 @@ function addLevelBoxEventListeners() {
           });
 
           // Set the background color of the clicked box and mark it as active
-          this.style.backgroundColor = 'green';
+          this.style.backgroundColor = '#1aff00';
           this.classList.add('active');
       });
 
       // Add hover effect using data-color
       box.addEventListener('mouseenter', function() {
           if (!this.classList.contains('active')) {
-              this.style.backgroundColor = 'rgb(174, 0, 255)';
+              this.style.backgroundColor = '#be00f8';
           }
       });
 

@@ -14,8 +14,7 @@ document.getElementById('start-game-button').addEventListener('click', () => {
 });
 
 const ingredients = [
-    'apple', 'banana', 'carrot', 'grapes', 'lettuce', 'pineapple', 'orange', 
-    'pepper', 'pumpkin', 'strawberry', 'tomato', 'watermelon'
+    'lettuce', 'lettuce','lettuce','lettuce','lettuce','lettuce','lettuce','lettuce','lettuce','lettuce','lettuce','lettuce','lettuce',
 ];
 
 const pointsPerTurn = 10;

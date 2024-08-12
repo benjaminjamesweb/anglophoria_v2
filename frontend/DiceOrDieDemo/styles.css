@@ -380,6 +380,11 @@ footer {
     z-index: 2;
 }
 
+.main-content h2{
+    font-size: 45px;
+}
+
+
 .stats {
     align-items: center;
     display: flex;
@@ -401,10 +406,11 @@ footer {
 }
 
 .ingredients-display {
-    margin-top: 90px;
     height: 400px;
+    width: 1100px;
     background-color: rgb(36, 36, 36);
     border-radius: 10px;
+    border: 1px white solid;
 }
 
 .ingredients-display img {
@@ -412,6 +418,13 @@ footer {
     height: 100px;
     cursor: pointer;
     margin: 25px;
+    margin-top: 45px;
+}
+
+.ingredients-display img:hover {
+    width: 130px;
+    height: 130px;
+    transition: width 0.3s ease, height 0.2s ease;
 }
 
 .chef {
@@ -593,9 +606,9 @@ footer {
 
 .user-controls {
     position: absolute;
-    bottom: 5%;
+    bottom: 18%;
     right: 50%;
-    transform: translateX(50%);
+    transform: translateX(50%) scale(0.8);
     gap: 10vw;
     display: flex;
     justify-content: center;
