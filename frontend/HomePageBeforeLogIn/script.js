@@ -91,7 +91,7 @@ document.querySelectorAll('.game-tile').forEach(tile => {
                           <div class="level-box level-box-c1" data-value="c1" data-color="rgb(255, 165, 0)">C1</div>
                           <div class="level-box level-box-c2" data-value="c2" data-color="rgb(255, 69, 0)">C2</div>
                       </div>
-                  <button id="playButton" class="playButton" style="margin-top: 30px;">Play</button>
+                  <button id="playButton" class="playButton" style="margin-top: 30px;">Play a Demo</button>
                 `;
             detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
 

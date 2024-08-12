@@ -600,12 +600,22 @@ font-size: 24px;
     margin-left: 10px;
 }
 
+.my-account-section .fields input, .my-account-section .fields select{
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.contact-section .fields input, .contact-section .fields textarea{
+    border-radius: 8px;
+    padding: 4px;
+}
+
 .horizontal-div {
     display: flex;
 }
 
 .horizontal-div input {
-    width: 70px;
+    width: 78px;
 }
 
 .horizontal-div .cvv {
@@ -631,7 +641,9 @@ font-size: 24px;
 }
 
 .premium-description {
-    margin: 30px;
+    margin: 10px;
+    font-size: 20px;
+    text-shadow: none;
 }
 .contact-section .header {
     margin-top: -20px;

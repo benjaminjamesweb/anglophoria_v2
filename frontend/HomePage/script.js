@@ -125,13 +125,15 @@ function editPaymentInfo() {
 
   // Change background and text color to indicate editable fields
   document.getElementById('credit-card-number').style.backgroundColor = 'rgb(240, 240, 240)';
-  document.getElementById('payment-info-section').style.backgroundColor = 'rgb(60, 60, 60)';
-  document.getElementById('buttons-div').style.backgroundColor = 'rgb(60, 60, 60)';
+  document.getElementById('payment-info-section').style.backgroundColor = 'rgb(90, 90, 90)';
+  document.getElementById('buttons-div').style.backgroundColor = 'rgb(90, 90, 90)';
   document.getElementById('credit-card-number').style.color = 'rgb(0, 0, 0)';
   document.getElementById('expiry-date').style.backgroundColor = 'rgb(240, 240, 240)';
   document.getElementById('expiry-date').style.color = 'rgb(0, 0, 0)';
   document.getElementById('cvv').style.backgroundColor = 'rgb(240, 240, 240)';
   document.getElementById('cvv').style.color = 'rgb(0, 0, 0)';
+  document.getElementById('premium-description-div').style.backgroundColor = 'rgb(240, 240, 240)';
+  document.getElementById('premium-description-div').style.color = 'rgb(5, 5, 5)';
 
   // Show save and cancel buttons, hide edit button
   document.getElementById('editPaymentBtn').style.display = 'none';
@@ -167,6 +169,8 @@ function resetPaymentInfoView() {
   document.getElementById('cvv').style.color = '#353535';
   document.getElementById('payment-info-section').style.backgroundColor = 'rgb(39, 39, 39)';
   document.getElementById('buttons-div').style.backgroundColor = 'rgb(39, 39, 39)';
+  document.getElementById('premium-description-div').style.backgroundColor = 'rgb(50, 50, 50)';
+  document.getElementById('premium-description-div').style.color = 'rgb(260, 260, 260)';
 
   // Show edit button, hide save and cancel buttons
   document.getElementById('editPaymentBtn').style.display = 'inline-block';
@@ -321,8 +325,8 @@ function editAccount() {
   document.getElementById('email').style.color = 'rgb(0, 0, 0)';
   document.getElementById('nickname').style.backgroundColor = 'rgb(240, 240, 240)';
   document.getElementById('nickname').style.color = 'rgb(0, 0, 0)';
-  document.getElementById('personal-info-section').style.backgroundColor = 'rgb(60, 60, 60)';
-  document.getElementById('personal-buttons-div').style.backgroundColor = 'rgb(60, 60, 60)';
+  document.getElementById('personal-info-section').style.backgroundColor = 'rgb(90, 90, 90)';
+  document.getElementById('personal-buttons-div').style.backgroundColor = 'rgb(90, 90, 90)';
 
   // Show save and cancel buttons
   document.getElementById('saveBtn').style.display = 'inline-block';

@@ -618,3 +618,8 @@ footer {
 .user-controls button:hover {
     background-color: rgb(51, 255, 0);
 }
+
+.pre-game-display h2 {
+    margin-top: -20px;
+    color: #be00f8;
+}
