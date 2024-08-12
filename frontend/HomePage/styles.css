@@ -315,7 +315,7 @@ footer {
     width: 900px;
     padding: 20px;
     text-align: center;
-    background: rgb(41, 41, 41);
+    background: linear-gradient(to bottom, rgb(100, 100, 100), rgb(56, 56, 56)); 
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -326,12 +326,29 @@ footer {
 
 .games-flex {
     width: 879px;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    overflow: auto; 
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+.games-flex::-webkit-scrollbar {
+    width: 20px; 
 }
 
+.games-flex::-webkit-scrollbar-thumb {
+    background-color: rgb(183, 0, 255); 
+    border-radius: 0px; 
+}
+
+
+.games-flex {
+    scrollbar-width: thick; 
+    scrollbar-color: rgb(255, 255, 255) #ae00ff; 
+}
 .game-tile {
     position: relative;
     transition: margin 0.3s;
@@ -821,7 +838,7 @@ font-size: 24px;
 }
 
 .legend-div .legend {
-    background-color: #333333;
+    background: linear-gradient(to bottom, rgb(100, 100, 100), rgb(56, 56, 56)); 
     padding: 30px;
     border-radius: 10px;
 }
