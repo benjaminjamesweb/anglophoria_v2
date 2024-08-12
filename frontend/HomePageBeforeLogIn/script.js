@@ -77,7 +77,7 @@ document.querySelectorAll('.game-tile').forEach(tile => {
           if (!document.getElementById('levelsDropdown')) {
               const newContent = `
               <div class="confirm-level">
-              <p> Confirm your level: </p>
+              <p> Choose your level: </p>
                   <select id="levelsDropdown">
                       <option value="a1" selected>A1</option>
                       <option value="a2">A2</option>
@@ -87,9 +87,8 @@ document.querySelectorAll('.game-tile').forEach(tile => {
                       <option value="c2">C2</option>
                   </select>
                   </div>
-                  <div class="button-div"> 
-                  <p>Log in to play! Or, play a demo: </p>
-                <button class="playButton" onclick="window.location.href='../DiceOrDieDemo/index.html'">Demo Game</button></div>
+
+                <button class="playButton" onclick="window.location.href='../DiceOrDieDemo/index.html'">Demo Game</button>
               `;
               detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
           }
