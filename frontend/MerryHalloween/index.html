@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anglophoria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../Resources/snowflake.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <div class="snowflake-container">
+        <div class="snowflake"></div>
+    </div>
+    <div class="whitebar"></div>
+
+    <div class="icicles">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <!-- Add more icicle images as needed -->
+    </div>
+
+    <div class="anglophoria">
+        <img src="../Images/anglophoria2.png" alt="">
+        <p>Games for improving your English</p>
+    </div>
+
+    <div class="trees">
+        <img src="../Images/tree.png" alt="" class="tree-1">
+        <img src="../Images/tree.png" alt="" class="tree-2">
+        <img src="../Images/tree.png" alt="" class="tree-3">
+        <img src="../Images/tree.png" alt="" class="tree-4">
+        <img src="../Images/tree.png" alt="" class="tree-5">
+        <img src="../Images/tree.png" alt="" class="tree-6">
+        <img src="../Images/tree.png" alt="" class="tree-7">
+        <!-- <img src="../Images/sheep.gif" alt="" class="sheep" onclick="showNextMessage()"> -->
+    </div>
+
+    <div id="menu-tab" onclick="toggleMenu()">☰</div>
+
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <div class="links">
+            <div class="title-section">
+                <img src="../Images/anglophoria.png" alt="">
+                <h2>Hello, John!</h2>
+            </div>
+            <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">×</a>
+            <a href="../HomePage/index.html">Home</a>
+
+
+            <a href="javascript:void(0)" onclick="toggleMyAccount()">Your Account</a>
+
+            <div class="my-account" id="my-account">
+                <div class="my-account-section">
+                    <div class="fields">
+                        <label for="nickname">Nickname: </label>
+                        <input type="text" id="nickname" value="John" readonly>
+            
+                        <label for="email">Email: </label>
+                        <input type="text" id="email" value="johndoe@shaw.ca" readonly>
+            
+                        <label for="account-type">Account type: </label>
+                        <select id="account-type" disabled>
+                            <option value="free">Free</option>
+                            <option value="premium" selected>Premium</option>
+                        </select>
+            
+                        <label for="first-language">First Language: </label>
+                        <select id="first-language" disabled>
+                            <option value="french" selected>French</option>
+                            <option value="german">German</option>
+                            <option value="italian">Italian</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="portuguese">Portuguese</option>
+                        </select>
+            
+                        <div class="payments-section">
+                            <input type="checkbox" id="payments" disabled>
+                            <label for="payments">I authorize monthly payments</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="buttons-div">
+                    <button id="editBtn" onClick="editAccount()">Edit</button>
+                    <button id="saveBtn" onClick="saveChanges()" style="display: none;">Save changes</button>
+                    <button id="cancelBtn" onClick="cancelChanges()" style="display: none;">Cancel changes</button>
+                </div>
+            </div>
+            
+
+            <a href="javascript:void(0)" onclick="toggleContact()">Contact</a>
+            <div class="contact" id="contact">
+                <div class="contact-section">
+                    <div class="header">                <h2 class="contact-us-header">Write to us!</h2></div>
+                
+                    <div class="fields">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" required>
+    
+                <label for="query">Your query</label>
+                <textarea id="query" required></textarea>
+            </div>
+                <button onClick="submitQuery()">Submit query</button>
+            </div>
+            <div class="submitted-query" style="display: none;">
+                <h2>Your query has been submitted!</h2>
+                <p>Thank you for writing to us!</p>
+                <p>We will respond within one year.</p>
+                <button onClick="resetContact()">Make a new query?</button>
+            </div>
+            </div>
+
+            <a href="javascript:void(0)" onclick="toggleParameters()">Parameters</a>
+
+            <div class="parameters" id="parameters">
+                    <div id="levelsContainer" class="box-container">
+                        <p>Target Proficiency Level: </p>
+                        <div id="levelsOptions" class="levels">
+                            <div class="level-box" data-value="a1">A1</div>
+                            <div class="level-box" data-value="a2">A2</div>
+                            <div class="level-box" data-value="b1">B1</div>
+                            <div class="level-box" data-value="b2">B2</div>
+                            <div class="level-box" data-value="c1">C1</div>
+                            <div class="level-box" data-value="c2">C2</div>
+                        </div>
+                    </div>
+                
+                    <div id="categoriesContainer" class="box-container">
+                        <p>View Categories:</p>
+                        <div class="categoriesOptions">
+                            <div class="category-box" data-value="grammar">Grammar</div>
+                            <div class="category-box" data-value="vocabulary">Vocabulary</div>
+                            <div class="category-box" data-value="listening">Listening</div>
+                            <div class="category-box" data-value="spelling">Spelling</div>
+                            <div class="category-box" data-value="writing">Writing</div>
+                            <div class="category-box" data-value="speed">Speed</div>
+                        </div>
+                    </div>
+            </div>
+
+
+            <a href="javascript:void(0)" onclick="toggleLogout()">Log out</a>
+            <div class="logout" id="logout">
+                <div class="logout-section">
+                <h2>Are you sure you want to log out?</h2>
+                <button onclick="window.location.href='../HomePageBeforeLogIn/index.html'">Yes, log out!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="game-display" id="game-display">
+        <div class="main-content">
+            <div class="stats">
+                <div class="points-earned">Points: 0</div>
+                <div class="game-countdown">Game Time: 60</div>
+                <div class="turn-countdown">Turn Time: 5</div>
+                <audio id="horn-sound" src="horn.mp3"></audio>
+            </div>
+            <div class="ingredients-display"></div>
+        </div>
+        <div class="chef">
+            <img src="Images/chef.gif" alt="Chef">
+            <div class="speech-bubble" id="speech-bubble">Find the apple!</div>
+        </div>
+        <div class="user-controls">
+            <button class="quit-button" onclick="window.location.href='../HomePage/index.html'">Quit</button>
+            <button class="back-button" onclick="window.location.reload()">Back</button>
+            <button class="restart-button" id="restart-button">Restart</button>
+        </div>
+    </div>
+
+    <div class="pre-game-display" id="pre-game-display">
+        <h1>Merry Halloween</h1>
+        <div class="game-welcome">
+            <button class="start-button" id="start-game-button">Start Game</button>
+            <button class="instructions-button" id="instructions-button">Instructions</button>
+        </div>
+        <div class="speaker-icon"></div>
+        <div class="fruit-display">
+        <img class="apple1" src="Images/pumpkin.png" alt="">
+        <img class="apple2" src="Images/pumpkin.png" alt="">
+    </div>
+    <a class="go-back" onclick="window.location.href='../HomePage/index.html'">
+        <span class="material-icons-outlined">chevron_left</span>
+        Go Back
+    </a>
+    </div>
+
+    <div class="instructions-overlay" id="instructions-overlay">
+        <div class="instructions-content">
+            <button class="close-button" id="close-instructions-button">X</button>
+            <p class="header">Welcome to Merry Halloween!</p>
+            <p>This game is designed to train your vocab skills in the kitchen!</p>
+            <p>You will need to follow the chef's orders, and chop the correct fruits and vegetables.</p>
+            <p>Good luck!</p>
+        </div>
+    </div>
+
+    <script src="../Resources/snowflakes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

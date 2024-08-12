@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anglophoria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../Resources/snowflake.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <div class="snowflake-container">
+        <div class="snowflake"></div>
+    </div>
+    <div class="whitebar"></div>
+
+    <div class="icicles">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <img src="../Images/icicle.png" alt="">
+        <!-- Add more icicle images as needed -->
+    </div>
+
+    <div class="anglophoria">
+        <img src="../Images/anglophoria2.png" alt="">
+        <p>Games for improving your English</p>
+    </div>
+
+    <div class="trees">
+        <img src="../Images/tree.png" alt="" class="tree-1">
+        <img src="../Images/tree.png" alt="" class="tree-2">
+        <img src="../Images/tree.png" alt="" class="tree-3">
+        <img src="../Images/tree.png" alt="" class="tree-4">
+        <img src="../Images/tree.png" alt="" class="tree-5">
+        <img src="../Images/tree.png" alt="" class="tree-6">
+        <img src="../Images/tree.png" alt="" class="tree-7">
+        <!-- <img src="../Images/sheep.gif" alt="" class="sheep" onclick="showNextMessage()"> -->
+    </div>
+
+    <div id="menu-tab" onclick="toggleMenu()">☰</div>
+
+    <!-- Side menu -->
+    <div id="side-menu" class="side-menu">
+        <div class="links">
+
+            <div class="title-section">
+                <h2>Welcome to</h2>
+                <img src="../Images/anglophoria.png" alt="">
+            </div>
+                <div class="welcome-section">
+                    <p>Play mini games to train your English.</p>
+                    <p>Earn points to unlock more games.</p>
+                    <p>To start earning points, please log in or sign up.</p>
+
+                </div>
+
+         
+                <a href="javascript:void(0)" onclick="toggleLogin()">
+                    Log in
+                    <span class="material-icons-outlined">chevron_right</span>
+                </a>
+            <div class="login" id="login">
+                <div class="login-section">
+                <h2>Log In</h2>
+                <div class="fields">
+                <label for="email">Email</label>
+                <input type="text" id="email">
+    
+                <label for="password">Password</label>
+                <input type="password" id="password">
+            </div>
+    
+                <button onclick="window.location.href='../HomePage/index.html'">Log in</button>
+
+                <a class="go-back" onclick="window.location.href='../HomePageBeforeLogIn/index.html'">
+                    <span class="material-icons-outlined">chevron_left</span>
+                    Go Back
+                </a>
+            </div>
+            </div>
+
+
+
+            <a href="javascript:void(0)" onclick="toggleSignUp()">
+                Sign up
+                <span class="material-icons-outlined">chevron_right</span>
+
+            </a>
+
+        <div class="signup" id="signup">
+            <div class="signup-section">
+                <h2>Sign up</h2>
+                <div class="fields">
+                <label for="username">Email</label>
+                <input type="text" id="signup-email">
+    
+                <label for="password">Create a Password</label>
+                <input type="password" id="signup-password">
+    
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password">
+            </div>
+    
+                <button onclick="window.location.href='../HomePage/index.html'">Sign Up</button>
+
+                <a class="go-back" onclick="window.location.href='../HomePageBeforeLogIn/index.html'">
+                    <span class="material-icons-outlined">chevron_left</span>
+                    Go Back
+                </a>
+        </div>
+        </div>
+    </div>
+</div>
+    <div class="game-display" id="game-display">
+        <div class="main-content">
+            <div class="stats">
+                <div class="points-earned">Points: 0</div>
+                <div class="game-countdown">Game Time: 60</div>
+                <div class="turn-countdown">Turn Time: 5</div>
+                <audio id="horn-sound" src="horn.mp3"></audio>
+            </div>
+            <div class="ingredients-display"></div>
+        </div>
+        <div class="chef">
+            <img src="Images/chef.gif" alt="Chef">
+            <div class="speech-bubble" id="speech-bubble">Find the apple!</div>
+        </div>
+        <div class="user-controls">
+            <button class="quit-button" onclick="window.location.href='../HomePage/index.html'">Quit</button>
+            <button class="back-button" onclick="window.location.reload()">Back</button>
+            <button class="restart-button" id="restart-button">Restart</button>
+        </div>
+    </div>
+
+    <div class="pre-game-display" id="pre-game-display">
+        <h1>Grapes of Wrath</h1>
+        <div class="game-welcome">
+            <button class="start-button" id="start-game-button">Start Game</button>
+            <button class="instructions-button" id="instructions-button">Instructions</button>
+        </div>
+        <div class="speaker-icon"></div>
+        <div class="fruit-display">
+        <img class="apple1" src="Images/grapes.png" alt="">
+        <img class="apple2" src="Images/grapes.png" alt="">
+    </div>
+    <a class="go-back" onclick="window.location.href='../HomePageBeforeLogIn/index.html'">
+        <span class="material-icons-outlined">chevron_left</span>
+        Go Back
+    </a>
+    </div>
+
+    <div class="instructions-overlay" id="instructions-overlay">
+        <div class="instructions-content">
+            <button class="close-button" id="close-instructions-button">X</button>
+            <p class="header">Welcome to Grapes of Wrath!</p>
+            <p>This game is designed to train your vocab skills in the kitchen!</p>
+            <p>You will need to follow the chef's orders, and chop the correct fruits and vegetables.</p>
+            <p>Good luck!</p>
+        </div>
+    </div>
+
+    <script src="../Resources/snowflakes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

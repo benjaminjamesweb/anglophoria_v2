@@ -55,6 +55,9 @@ async function logIn() {
 }
   
 
+// Ensure levelsContainer is created only once
+let levelsContainerExists = false;
+
 document.querySelectorAll('.game-tile').forEach(tile => {
   tile.addEventListener('click', function(event) {
       event.preventDefault();
@@ -64,39 +67,88 @@ document.querySelectorAll('.game-tile').forEach(tile => {
       const imgSrc = this.dataset.img;
       const level = this.dataset.header;
       const category = this.dataset.description;
+      const gamePage = this.dataset.link; // Get the link from data-link attribute
 
-      if (detailsSection.style.display === 'flex' &&
-          document.getElementById('game-title').textContent === title) {
-          detailsSection.style.display = 'none';
+      if (detailsSection.style.display === 'flex' && document.getElementById('game-title').textContent === title) {
+        closeGameDetails(); // Close the details section if the same game tile is clicked twice
       } else {
-          document.getElementById('game-title').textContent = title;
-          document.getElementById('game-image').src = imgSrc;
-          document.getElementById('game-level').textContent = level;
-          document.getElementById('game-category').innerHTML = category;
+        // Update the game details section
+        document.getElementById('game-title').textContent = title;
+        document.getElementById('game-image').src = imgSrc;
+        document.getElementById('game-level').textContent = level;
+        document.getElementById('game-category').innerHTML = category;
 
-          if (!document.getElementById('levelsDropdown')) {
-              const newContent = `
-              <div class="confirm-level">
-              <p> Choose your level: </p>
-                  <select id="levelsDropdown">
-                      <option value="a1" selected>A1</option>
-                      <option value="a2">A2</option>
-                      <option value="b1">B1</option>
-                      <option value="b2">B2</option>
-                      <option value="c1">C1</option>
-                      <option value="c2">C2</option>
-                  </select>
-                  </div>
+        if (!levelsContainerExists) {
+            // If levelsContainer doesn't exist, create it with a play button
+            const newContent = `
+                   <div id="levelsContainer" class="box-container" style="margin-top: 30px;">
+                      <p>Choose a level: </p>
+                      <div id="levelsOptions" class="levels">
+                          <div class="level-box level-box-a1" data-value="a1" data-color="rgb(255, 0, 212)">A1</div>
+                          <div class="level-box level-box-a2" data-value="a2" data-color="rgb(0, 60, 255)">A2</div>
+                          <div class="level-box level-box-b1" data-value="b1" data-color="rgb(94, 255, 0)">B1</div>
+                          <div class="level-box level-box-b2" data-value="b2" data-color="rgb(255, 255, 0)">B2</div>
+                          <div class="level-box level-box-c1" data-value="c1" data-color="rgb(255, 165, 0)">C1</div>
+                          <div class="level-box level-box-c2" data-value="c2" data-color="rgb(255, 69, 0)">C2</div>
+                      </div>
+                  <button id="playButton" class="playButton" style="margin-top: 30px;">Play</button>
+                `;
+            detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
 
-                <button class="playButton" onclick="window.location.href='../DiceOrDieDemo/index.html'">Demo Game</button>
-              `;
-              detailsSection.querySelector('.inner').insertAdjacentHTML('beforeend', newContent);
-          }
+            // Add event listeners to the level boxes for click and hover effects
+            addLevelBoxEventListeners();
+            
+            // Mark levelsContainer as created
+            levelsContainerExists = true;
+        }
 
-          detailsSection.style.display = 'flex';
+        // Update Play button link every time a new game tile is clicked
+        document.getElementById('playButton').onclick = function() {
+            window.location.href = gamePage;
+        };
+
+        detailsSection.style.display = 'flex';
       }
   });
 });
+
+
+function closeGameDetails() {
+  const detailsSection = document.getElementById('game-details');
+  detailsSection.style.display = 'none';
+}
+
+function addLevelBoxEventListeners() {
+  document.querySelectorAll('.level-box').forEach(box => {
+      box.style.backgroundColor = 'gray'; // Set default background color to gray
+
+      box.addEventListener('click', function() {
+          // Reset all boxes to gray and remove the active class
+          document.querySelectorAll('.level-box').forEach(b => {
+              b.style.backgroundColor = 'gray';
+              b.classList.remove('active');
+          });
+
+          // Set the background color of the clicked box and mark it as active
+          this.style.backgroundColor = 'green';
+          this.classList.add('active');
+      });
+
+      // Add hover effect using data-color
+      box.addEventListener('mouseenter', function() {
+          if (!this.classList.contains('active')) {
+              this.style.backgroundColor = 'rgb(174, 0, 255)';
+          }
+      });
+
+      box.addEventListener('mouseleave', function() {
+          // Only reset to gray if the box is not the selected one
+          if (!this.classList.contains('active')) {
+              this.style.backgroundColor = 'gray';
+          }
+      });
+  });
+}
 
 function closeGameDetails() {
   var gameDetails = document.getElementById("game-details");

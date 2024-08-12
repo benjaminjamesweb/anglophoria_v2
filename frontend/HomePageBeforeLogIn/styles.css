@@ -452,6 +452,27 @@ footer {
     margin-top: 0px;
 }
 
+
+.levels, .attainedLevels{
+    display: flex;
+    gap: 0px;
+    margin-top: 8px; /* Reduced from 10px */
+}
+
+.level-box, .attainedlevel-box, .accent-box {
+    border: 2.4px solid black; /* Reduced from 3px */
+    padding: 10px 20px 10px 20px;
+     /* Reduced from 8px */
+    background-color: rgb(103, 103, 103);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    flex: 1;
+    text-align: center;
+    margin: 0px;
+    user-select: none;
+    font-size: 80%; /* Reduced by 20% */
+}
+
 .fields {
     display: flex;
     flex-direction: column;
