@@ -528,12 +528,12 @@ footer {
 }
 
 .start-button {
-    background-color: #ff00e1;
+    background-color: #ff2e2e;
     color: white;
 }
 
 .instructions-button {
-    background-color: #3c00ff;
+    background-color: #33a100;
     color: white;
 }
 
@@ -559,8 +559,8 @@ footer {
 }
 
 .instructions-content {
-    background: rgb(224, 195, 255);
-    color: #8900be;
+    background: rgb(255, 24, 24);
+    color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     max-width: 600px;

@@ -528,12 +528,12 @@ footer {
 }
 
 .start-button {
-    background-color: #ff00e1;
+    background-color: #8b7200;
     color: white;
 }
 
 .instructions-button {
-    background-color: #3c00ff;
+    background-color: #8f0000;
     color: white;
 }
 
@@ -559,8 +559,8 @@ footer {
 }
 
 .instructions-content {
-    background: rgb(224, 195, 255);
-    color: #8900be;
+    background: rgb(255, 102, 0);
+    color: #363636;
     padding: 20px;
     border-radius: 10px;
     max-width: 600px;
@@ -632,5 +632,5 @@ footer {
 
 .pre-game-display h2 {
     margin-top: -20px;
-    color: #be00f8;
+    color: #f89500;
 }
