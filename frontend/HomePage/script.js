@@ -1,16 +1,62 @@
+var userTheme = {{styles1: {link: styles1.css; color1: rgb(0, 10, 26)}}}
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const themeSelect = document.getElementById('theme-select');
   const stylesheet = document.getElementById('theme-stylesheet');
 
-  // Event listener for dropdown changes
+  if (userTheme) {
+    stylesheet.setAttribute('href', userTheme);
+    themeSelect.value = userTheme;
+  }
+
   themeSelect.addEventListener('change', () => {
-      // Get the selected value
-      const selectedTheme = themeSelect.value;
-      
-      // Change the stylesheet href to the selected theme
-      stylesheet.setAttribute('href', selectedTheme);
+      userTheme = themeSelect.value; 
+      stylesheet.setAttribute('href', userTheme); 
   });
 });
+
+
+function addAccentBoxEventListeners() {
+  document.querySelectorAll('.accent-box').forEach(box => {
+
+      box.style.background = 'rgba(0, 0, 0, 0)'; 
+
+      box.addEventListener('click', function() {
+          
+          if (this.classList.contains('active')) {
+              this.style.background = 'rgba(0, 0, 0, 0)';
+              this.classList.remove('active');
+          } else {  
+              document.querySelectorAll('.accent-box').forEach(b => {
+                  b.style.background = 'rgba(0, 0, 0, 0)';
+                  b.classList.remove('active');
+              });
+
+              
+              this.style.background = 'linear-gradient(to top, rgba(0, 0, 0, 0), ${themeColor1})';
+              this.classList.add('active');
+          }
+      });
+
+      box.addEventListener('mouseenter', function() {
+          if (!this.classList.contains('active')) {
+              this.style.background = 'linear-gradient(to top, rgba(0, 0, 0, 0), ${themeColor2})';
+          }
+      });
+
+      box.addEventListener('mouseleave', function() {
+          if (!this.classList.contains('active')) {
+              this.style.background = 'rgba(0, 0, 0, 0)';
+          }
+      });
+  });
+}
+
+// Call the function to set up event listeners
+addAccentBoxEventListeners();
+
+
 
 function toggleMenu() {
   var menu = document.getElementById("side-menu");
@@ -427,48 +473,3 @@ document.querySelectorAll('.category-box').forEach(function(box) {
       // You can use this array in form submission or other logic
   });
 });
-
-
-function addAccentBoxEventListeners() {
-  document.querySelectorAll('.accent-box').forEach(box => {
-      // Set default background color to transparent
-      box.style.backgroundColor = 'rgba(0, 0, 0, 0)'; 
-
-      box.addEventListener('click', function() {
-          // Check if the box is already active
-          if (this.classList.contains('active')) {
-              // If active, clear the background color and remove the active class
-              this.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-              this.classList.remove('active');
-          } else {
-              // Reset all boxes to transparent and remove the active class
-              document.querySelectorAll('.accent-box').forEach(b => {
-                  b.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-                  b.classList.remove('active');
-              });
-
-              // Set the background color of the clicked box to green and mark it as active
-              this.style.backgroundColor = '#00f819';
-              this.classList.add('active');
-          }
-      });
-
-      // Add hover effect to turn the box purple
-      box.addEventListener('mouseenter', function() {
-          if (!this.classList.contains('active')) {
-              this.style.backgroundColor = 'rgb(174, 0, 255)';
-          }
-      });
-
-      box.addEventListener('mouseleave', function() {
-          // Only reset to transparent if the box is not the selected one
-          if (!this.classList.contains('active')) {
-              this.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-          }
-      });
-  });
-}
-
-
-// Call this function to ensure the accent boxes in the parameters section work
-addAccentBoxEventListeners();

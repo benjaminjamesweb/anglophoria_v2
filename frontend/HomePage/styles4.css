@@ -78,6 +78,8 @@ body {
     height: 100%;
     width: 0;
     position: fixed;
+    border-right: 1px solid white;
+    border-radius: 10px;
     top: 0;
     left: 0;
     background: linear-gradient(to top, rgb(177, 255, 125), rgb(255, 119, 214));
