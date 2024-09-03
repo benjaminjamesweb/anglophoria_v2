@@ -1,0 +1,885 @@
+.icicles {
+    position: fixed;
+    top: 60px; 
+    left: 0px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    width: 100vw;
+}
+
+.whitebar {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    background-color: white;
+}
+
+body {
+    background: linear-gradient(to top, rgb(35, 35, 35), black);
+    margin-top: 0px; 
+    font-family: "Poetsen One", sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 
+        -0.8px -0.8px 0 #000,  
+         0.8px -0.8px 0 #000,
+        -0.8px  0.8px 0 #000,
+         0.8px  0.8px 0 #000; 
+    font-size: 24px; 
+}
+
+.theme-div {
+    position: absolute;
+    top: 10vh;
+    left:20vw;
+    z-index: 40;
+    background-color: rgb(71, 255, 71);
+    width: 12vw;
+    height: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2vh;
+}
+
+.theme-div #theme-select{
+    font-size: 20px;
+    border-radius: 2vh;
+    background-color: rgb(255, 88, 255);
+    width: 6vw;
+    text-align: center;
+}
+
+.theme-div #theme-select:hover{
+    background-color: rgb(33, 111, 255);
+}
+.trees {
+    position: fixed;
+    top: 70%;
+    left: 50%;
+    width: 90vw; 
+    height: 220px; 
+    transform: translate(-50%, -50%);
+    border: 1px solid transparent;
+}
+
+.trees img {
+    position: absolute;
+    width: 80px;
+    height: auto;
+}
+
+.tree {
+    position: absolute;
+}
+
+.tree-1 {
+    top: 0%;
+    left: 0%;
+}
+
+.tree-2 {
+    top: 7%;
+    left: 4%;
+}
+
+.tree-3 {
+    top: 60%;
+    left: 94%;
+}
+
+.tree-4 {
+    top: 87%;
+    left: 92%;
+}
+
+.tree-5 {
+    top: 40%;
+    left: 10%;
+}
+
+.tree-6 {
+    top: 75%;
+    left: 30%;
+}
+
+.tree-7 {
+    top: 70%;
+    left: 0%;
+}
+
+.trees .sheep { 
+    top: 40%; 
+    left: -5%; 
+    height: 300px; 
+    width: auto;
+    z-index: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.anglophoria {
+    position: fixed;
+    top: -3%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.anglophoria img {
+    width: 400px; 
+    margin: 20px;
+    margin-bottom: 0px;
+    height: auto;
+}
+
+.anglophoria p {
+    margin-top: 0px;
+    font-size: 18px;
+    color: black;
+}
+
+#menu-tab {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 10; /* Ensure it stays on top of the .main-content */
+}
+
+
+
+
+.side-menu .links a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid white; 
+}
+
+.side-menu .links a:hover {
+    color: #f1f1f1;
+    background-color: #575757; 
+}
+
+.side-menu a.close-btn {
+    border-bottom: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border-bottom: none;
+}
+
+.parameters {
+    background-color: rgb(51, 51, 51);
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+
+#levelsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -15px;
+}
+
+#accentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -15px;
+}
+
+#accentContainer p {
+    margin-bottom: -20px;
+}
+
+#accentContainer .accents {
+    display: flex;
+    gap: 0px;
+    margin-top: 8px;
+    padding: 10px;
+}
+
+#attainedLevelsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: -15px;
+}
+
+
+#levelsContainer p {
+    margin-bottom: 0px; /* Kept the same since it's already minimal */ /* Reduced by 20% */
+}
+
+.levels, .attainedLevels{
+    display: flex;
+    gap: 0px;
+    margin-top: 8px; /* Reduced from 10px */
+}
+
+.level-box, .attainedlevel-box, .accent-box {
+    border: 2.4px solid black; /* Reduced from 3px */
+    padding: 10px 20px 10px 20px;
+     /* Reduced from 8px */
+    background-color: rgb(103, 103, 103);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    flex: 1;
+    text-align: center;
+    margin: 0px;
+    user-select: none;
+    font-size: 80%; /* Reduced by 20% */
+}
+
+.accent-box {
+    margin: 3px;
+}
+
+
+#levelsContainer .level-box:hover {
+    background-color: rgb(174, 0, 255);
+    transform: scale(1.05);
+}
+
+.level-box.selected {
+    background-color: #00f819; 
+    color: white;
+    border-color: #000000;
+}
+
+#categoriesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px;
+}
+
+#categoriesContainer p {
+    margin-bottom: 8px; /* Reduced from 10px */
+}
+
+.categoriesOptions {
+    display: grid;
+    grid-template-columns: repeat(2, 160px); /* Reduced from 200px */
+    grid-gap: 8px; /* Reduced from 10px */
+}
+
+.category-box {
+    border: 2.4px solid black; /* Reduced from 3px */
+    padding: 6px; /* Reduced from 8px */
+    background-color: rgb(103, 103, 103);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+    user-select: none;
+    margin: 0px;
+    font-size: 80%; /* Reduced by 20% */
+}
+
+.category-box:hover {
+    background-color: rgb(195, 0, 255);
+    transform: scale(1.05);
+}
+
+.category-box.selected {
+    background-color: #36f800; /* Color to indicate selection */
+    color: white;
+    border-color: #000000;
+}
+
+.main-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgb(100, 100, 100), rgb(56, 56, 56)); 
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5; /* Ensure it is behind the side-menu */
+}
+
+
+.games-flex {
+    width: 879px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: auto; 
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+.games-flex::-webkit-scrollbar {
+    width: 20px; 
+}
+
+.games-flex::-webkit-scrollbar-thumb {
+    background-color: rgb(183, 0, 255); 
+    border-radius: 0px; 
+}
+
+
+.games-flex {
+    scrollbar-width: thick; 
+    scrollbar-color: rgb(255, 255, 255) #ae00ff; 
+}
+.game-tile {
+    position: relative;
+    transition: margin 0.3s;
+    margin: 10px;
+}
+
+.game-tile img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: 0px;
+}
+
+.game-tile-1 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-7 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-8 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-20 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-30 img {
+    background-color: rgb(94, 255, 0);
+}
+
+.game-tile-2 img {
+    background-color: rgb(0, 60, 255);
+}
+
+.game-tile-3 img {
+    background-color: rgb(0, 60, 255);
+}
+
+.game-tile-9 img {
+    background-color: rgb(0, 60, 255);
+}
+
+.game-tile-21 img {
+    background-color: rgb(0, 60, 255);
+}
+
+.game-tile-25 img {
+    background-color: rgb(255, 0, 212);
+}
+
+.game-tile-5 img {
+    background-color: rgb(255, 0, 212);
+}
+
+.game-tile-10 img {
+    background-color: rgb(255, 0, 212);
+}
+
+
+
+
+.game-tile:hover img {
+    transform: scale(1.1);
+    z-index: 1;
+    background-color: yellow;
+}
+
+.game-tile:hover {
+    margin: 25px;
+}
+
+.game-info {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.game-tile:hover .game-info {
+    display: block;
+}
+
+
+.game-details {
+    position: fixed;
+    height: 100vh;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    width: 25vw; 
+    background-color: rgb(43, 43, 43);
+    box-shadow: -0.2vw 0 0.5vw rgba(0,0,0,0.5); 
+    padding: 2vh; 
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: auto; 
+}
+
+.game-details .inner {
+    background-color: rgb(0, 0, 0);
+    padding: 2vh; 
+    height: 100%;
+    margin:0px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.game-details h2 {
+    font-size: 3.4vh; 
+    transition: font-size 0.3s ease;
+}
+
+.game-details h2:hover {
+    font-size: 4.4vh;
+    color: #be00f8;
+}
+
+.game-details img {
+    width: 70%;
+    height: auto; 
+    object-fit: cover;
+    margin: 1vh 0; 
+    transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease;
+}
+
+.game-details img:hover {
+    width: 75%;
+    height: auto;
+    margin-top: 0;
+}
+
+.game-details div {
+    font-size: 1.8vh; 
+    margin: 0.5vh 0; 
+}
+
+.game-details #game-level {
+    margin-top: 2vh;
+    font-size: 3vh; 
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.game-details a.close-btn {
+    border-bottom: none;
+    text-decoration: none;
+    border: none;
+}
+
+.game-details .close-btn {
+    font-family: "Poetsen One", sans-serif;
+    position: absolute;
+    top: 3.6vh; 
+    right: 25vw;
+    font-size: 3vh; 
+    margin-left: 5vh;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    z-index: 30;
+}
+
+.game-details #game-level:hover {
+    color: #be00f8;
+}
+
+.game-details #game-category {
+    margin-top: 3vh; 
+    text-align: center;
+    background-color: #3d3d3d;
+    padding: 2vh; 
+    border-radius: 1vh; 
+    transition: background-color 0.3s ease;
+}
+
+.game-details #game-category:hover {
+    background-color: #be00f8;
+}
+
+.game-details .confirm-level {
+    transition: background-color 0.3s ease;
+    margin-top: 3vh;
+    text-align: center;
+    background-color: rgb(36, 36, 36);
+    padding: 0.5vh 2vh; 
+    border-radius: 1vh; 
+}
+
+.game-details .confirm-level:hover {
+    background-color: #be00f8;
+}
+
+.confirm-level #levelsDropdown {
+    width: 10vw; 
+    font-size: 2vh;
+    text-align: center;
+    color: white;
+    background-color: rgb(39, 39, 39);
+    border-radius: 0.8vh; 
+    margin-top: 0;
+    font-family: "Poetsen One", sans-serif;
+}
+
+.playButton {
+    width: 15vw; 
+    height: 5vh; 
+    font-size: 3vh; 
+    text-align: center;
+    background-color: rgb(29, 80, 16);
+    border-radius: 0.8vh; 
+    font-family: "Poetsen One", sans-serif;
+    margin-top: auto; 
+    transition: background-color 0.3s ease;
+}
+
+.playButton:hover {
+    background-color: rgb(51, 255, 0);
+}
+
+.logout, .signup, .contact, .my-account {
+    display: none;
+    background-color: #272727;
+    padding-bottom: 20px;
+    padding-top: 5px;
+    
+}
+
+
+.contact-section, .my-account-section, .logout-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logout-section h2 {
+    margin-left: 20px;
+    margin-right: 20px;
+font-size: 24px;
+}
+.contact-section .fields, .my-account-section .fields{
+    display: flex;
+    width: 95%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.my-account-section .fields input, .my-account-section .fields select{
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.contact-section .fields input, .contact-section .fields textarea{
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.horizontal-div {
+    display: flex;
+}
+
+.horizontal-div input {
+    width: 78px;
+}
+
+.horizontal-div .cvv {
+    margin-left: 200px;
+}
+
+.horizontal-div label{
+    margin-right: 10px;
+}
+.my-account-section .fields{
+    margin-top: 20px;
+}
+.contact-section .fields input{
+   font-size: 18px;
+   font-family: "Poetsen One", sans-serif;
+}
+
+.premium-description-div {
+    text-align: center;
+    background-color: #414141;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.premium-description {
+    margin: 10px;
+    font-size: 20px;
+    text-shadow: none;
+}
+.contact-section .header {
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+.contact-section .header:hover {
+    color: purple;
+    transition: color 0.3s ease;
+}
+.my-account-section .fields input{
+    font-size: 18px;
+    font-family: "Poetsen One", sans-serif;
+    margin-bottom: 15px;
+    background-color: rgb(173, 173, 173);
+    color: #353535;
+ }
+
+ .my-account-section .fields input:focus {
+    background-color: rgb(174, 0, 255) !important; /* Added !important to force the rule */
+}
+
+.my-account-section .fields select:focus {
+    background-color: rgb(174, 0, 255) 
+}
+
+
+
+ .payments-section {
+    text-align: center;
+ }
+
+.contact-section .fields textarea{
+    font-size: 18px;
+    font-family: "Poetsen One", sans-serif;
+ }
+
+ .contact-section .fields textarea:focus,  .contact-section .fields input:focus{
+    background-color: rgb(174, 0, 255) 
+ }
+
+ .contact-section .fields textarea:valid,  .contact-section .fields input:valid{
+    background-color: #ffffff; 
+}
+
+.contact-section .fields textarea:focus:valid,  .contact-section .fields input:focus:valid {
+    background-color: rgb(174, 0, 255)  
+}
+
+.my-account-section .fields select{
+    width: 40%;
+    font-size: 18px;
+    font-family: "Poetsen One", sans-serif;
+    margin-bottom: 15px;
+ }
+
+ .my-account button, .logout-section button{
+    font-size: 18px;
+    padding: 5px;
+    min-width: 30%;
+    border-radius: 8px;
+    font-family: "Poetsen One", sans-serif;
+    background-color: rgb(0, 117, 0);
+ }
+
+ .my-account .buttons-div{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0px;
+ }
+ .my-account button:hover, .logout-section button:hover{
+    font-size: 20px;
+    background-color: rgb(0, 255, 0);
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+ }
+ 
+
+ .contact-section button, .submitted-query button{
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 8px;
+    font-family: "Poetsen One", sans-serif;
+    background-color: rgb(0, 100, 0);
+ }
+
+ .contact-section button:hover, .submitted-query button:hover{
+    font-size: 20px;
+    background-color: rgb(0, 255, 0);
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+ }
+ 
+
+
+
+.contact-us-header {
+    margin-left: 30px;
+}
+
+.contact input, .contact textarea {
+    margin: 5px 10px 15px 0px;
+}
+
+.contact textarea#query {
+    height: 100px; /* Set to an appropriate fixed height */  /* Make sure it fits well within the form */
+}
+
+.login-section button, .signup-section button{
+    margin-top: 20px;
+    width: 200px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.contact .submitted-query {
+    text-align: center;
+}
+
+.contact .submitted-query h2{
+    color: #be00f8;
+}
+
+
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+.title-section img{
+    width: 300px;
+    margin-bottom: 0px;
+}
+
+
+.welcome-section p:hover{
+    color: #be00f8;
+    font-size: 22px;
+    transition: color 0.3s ease, font-size 0.3s ease; /* Correct transition syntax */
+}
+
+.title-section h2 {
+    color: #be00f8;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+.side-menu {
+    z-index: 10; /* Ensure it stays on top of .main-content */
+    transition: width 0.5s ease;
+}
+
+.game-details {
+    z-index: 20; /* Ensure it stays on top of .side-menu */
+}
+
+.main-content {
+    z-index: 5; /* Ensure it stays behind */
+}
+
+
+.legend-div {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.legend-div .legend {
+    background: linear-gradient(to bottom, rgb(100, 100, 100), rgb(56, 56, 56)); 
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.legend-div .legend-title{
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+
+.games-title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8;
+    font-size: 25px;
+}

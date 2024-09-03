@@ -1,4 +1,16 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const themeSelect = document.getElementById('theme-select');
+  const stylesheet = document.getElementById('theme-stylesheet');
 
+  // Event listener for dropdown changes
+  themeSelect.addEventListener('change', () => {
+      // Get the selected value
+      const selectedTheme = themeSelect.value;
+      
+      // Change the stylesheet href to the selected theme
+      stylesheet.setAttribute('href', selectedTheme);
+  });
+});
 
 function toggleMenu() {
   var menu = document.getElementById("side-menu");
@@ -419,18 +431,26 @@ document.querySelectorAll('.category-box').forEach(function(box) {
 
 function addAccentBoxEventListeners() {
   document.querySelectorAll('.accent-box').forEach(box => {
-      box.style.backgroundColor = 'gray'; // Set default background color to gray
+      // Set default background color to transparent
+      box.style.backgroundColor = 'rgba(0, 0, 0, 0)'; 
 
       box.addEventListener('click', function() {
-          // Reset all boxes to gray and remove the active class
-          document.querySelectorAll('.accent-box').forEach(b => {
-              b.style.backgroundColor = 'gray';
-              b.classList.remove('active');
-          });
+          // Check if the box is already active
+          if (this.classList.contains('active')) {
+              // If active, clear the background color and remove the active class
+              this.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+              this.classList.remove('active');
+          } else {
+              // Reset all boxes to transparent and remove the active class
+              document.querySelectorAll('.accent-box').forEach(b => {
+                  b.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                  b.classList.remove('active');
+              });
 
-          // Set the background color of the clicked box and mark it as active
-          this.style.backgroundColor = '#00f819';
-          this.classList.add('active');
+              // Set the background color of the clicked box to green and mark it as active
+              this.style.backgroundColor = '#00f819';
+              this.classList.add('active');
+          }
       });
 
       // Add hover effect to turn the box purple
@@ -441,13 +461,14 @@ function addAccentBoxEventListeners() {
       });
 
       box.addEventListener('mouseleave', function() {
-          // Only reset to gray if the box is not the selected one
+          // Only reset to transparent if the box is not the selected one
           if (!this.classList.contains('active')) {
-              this.style.backgroundColor = 'gray';
+              this.style.backgroundColor = 'rgba(0, 0, 0, 0)';
           }
       });
   });
 }
+
 
 // Call this function to ensure the accent boxes in the parameters section work
 addAccentBoxEventListeners();

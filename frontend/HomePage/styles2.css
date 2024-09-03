@@ -15,7 +15,33 @@
     width: 100vw;
     height: 60px;
     display: flex;
-    background-color: white;
+    background-color: rgb(255, 0, 0);
+}
+.theme-div {
+    position: absolute;
+    top: 10vh;
+    left:20vw;
+    z-index: 40;
+    background-color: rgb(71, 255, 71);
+    width: 12vw;
+    height: 6vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2vh;
+}
+
+.theme-div #theme-select{
+    font-size: 20px;
+    border-radius: 2vh;
+    background-color: rgb(255, 88, 255);
+    width: 6vw;
+    text-align: center;
+}
+
+.theme-div #theme-select:hover{
+    background-color: rgb(33, 111, 255);
 }
 
 body {
