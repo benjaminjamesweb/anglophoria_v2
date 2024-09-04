@@ -1,5 +1,4 @@
-var userTheme = {{styles1: {link: styles1.css; color1: rgb(0, 10, 26)}}}
-};
+let userTheme;
 
 document.addEventListener('DOMContentLoaded', () => {
   const themeSelect = document.getElementById('theme-select');
