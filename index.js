@@ -23,13 +23,15 @@ app.get('*', (req, res) => {
 });
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGODB_URL)
-    .then(() => {
-        console.log('Connected to the database');
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
-        });
-    })
-    .catch((error) => {
-        console.error(`Error connecting to the database: ${error}`);
+mongoose.connect(process.env.MONGODB_URL, {
+    dbName: 'anglophoria'
+})
+.then(() => {
+    console.log('Connected to the anglophoria_users database');
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
     });
+})
+.catch((error) => {
+    console.error(`Error connecting to the database: ${error}`);
+});
