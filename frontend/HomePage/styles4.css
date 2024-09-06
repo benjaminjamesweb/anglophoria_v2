@@ -172,6 +172,12 @@ body {
     margin-top: 8px; /* Reduced from 10px */
 }
 
+.levels, .attainedLevels{
+    display: flex;
+    gap: 0px;
+    margin-top: 8px; /* Reduced from 10px */
+}
+
 .level-box, .attainedlevel-box, .accent-box {
     border: 1px solid rgb(255, 255, 255);
     border-radius: 8px;
@@ -248,15 +254,21 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 900px;
+    width: 40vw;
+    height: 40vh;
     padding: 20px;
     text-align: center;
-    background: linear-gradient(to bottom, rgb(100, 100, 100), rgb(56, 56, 56)); 
     border-radius: 10px;
+    border: 1px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 5; /* Ensure it is behind the side-menu */
+    z-index: 5;
+    transition: background-color 0.3s ease;
+}
+
+.main-content:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 
@@ -272,18 +284,16 @@ body {
     overflow-y: auto; 
 }
 .games-flex::-webkit-scrollbar {
-    width: 20px; 
+    width: 0px; 
 }
 
 .games-flex::-webkit-scrollbar-thumb {
-    background-color: rgb(183, 0, 255); 
     border-radius: 0px; 
 }
 
 
 .games-flex {
-    scrollbar-width: thick; 
-    scrollbar-color: rgb(255, 255, 255) #ae00ff; 
+    scrollbar-width: 0px;
 }
 .game-tile {
     position: relative;
@@ -292,64 +302,14 @@ body {
 }
 
 .game-tile img {
-    width: 80px;
-    height: 80px;
+    width: 4vw;
     cursor: pointer;
     transition: transform 0.3s;
-    background-color: rgb(255, 255, 255);
     border-radius: 5px;
+    border: 1px solid white;
+    background-color: #d375ff;
     margin: 0px;
 }
-
-.game-tile-1 img {
-    background-color: rgb(94, 255, 0);
-}
-
-.game-tile-7 img {
-    background-color: rgb(94, 255, 0);
-}
-
-.game-tile-8 img {
-    background-color: rgb(94, 255, 0);
-}
-
-.game-tile-20 img {
-    background-color: rgb(94, 255, 0);
-}
-
-.game-tile-30 img {
-    background-color: rgb(94, 255, 0);
-}
-
-.game-tile-2 img {
-    background-color: rgb(0, 60, 255);
-}
-
-.game-tile-3 img {
-    background-color: rgb(0, 60, 255);
-}
-
-.game-tile-9 img {
-    background-color: rgb(0, 60, 255);
-}
-
-.game-tile-21 img {
-    background-color: rgb(0, 60, 255);
-}
-
-.game-tile-25 img {
-    background-color: rgb(255, 0, 212);
-}
-
-.game-tile-5 img {
-    background-color: rgb(255, 0, 212);
-}
-
-.game-tile-10 img {
-    background-color: rgb(255, 0, 212);
-}
-
-
 
 
 .game-tile:hover img {
@@ -761,7 +721,7 @@ font-size: 24px;
     top: 83%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
